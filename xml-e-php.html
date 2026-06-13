@@ -12,7 +12,7 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/zh-progphp-nov-2002/xml-u-php.html">
+        <link rel="canonical" href="https://stahe.github.io/zh-progphp-nov-2002/xml-e-php.html">
       
       
         <link rel="prev" href="hii.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>5. XML 与 PHP - PHP4 Web 编程入门</title>
+        <title>5. XML 和 PHP - PHP4 Web 编程入门</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. XML 与 PHP
+              5. XML 和 PHP
             
           </span>
         </div>
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="php-web-ianhenguen.html" class="md-nav__link">
+      <a href="php-angeianhenguen.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. PHP Web 编程入门
+    3. PHP 网页编程入门
   
 
     
@@ -427,7 +429,7 @@
   <span class="md-ellipsis">
     
   
-    5. XML 与 PHP
+    5. XML 和 PHP
   
 
     
@@ -438,14 +440,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="xml-u-php.html" class="md-nav__link md-nav__link--active">
+      <a href="xml-e-php.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    5. XML 与 PHP
+    5. XML 和 PHP
   
 
     
@@ -474,7 +476,7 @@
   <a href="#51-xml-xsl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.1. XML 文件与 XSL 样式表
+        5.1. XML 文件和 XSL 样式表
       
     </span>
   </a>
@@ -497,7 +499,7 @@
   <a href="#521-xml-xsl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.2.1. 税务应用程序的 XML 文件和 XSL 样式表
+        5.2.1. 税务应用程序中的文件 XML 和样式表 XSL
       
     </span>
   </a>
@@ -521,10 +523,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#53-php-xml" class="md-nav__link">
+  <a href="#53-xml-php" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.3. 在 PHP 中解析 XML 文档
+        5.3. 将 XML 文档解析为 PHP
       
     </span>
   </a>
@@ -535,7 +537,7 @@
   <a href="#54-6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.4. 税务应用程序：第 6 版
+        5.4. 税务应用程序：第6版
       
     </span>
   </a>
@@ -575,7 +577,7 @@
   <span class="md-ellipsis">
     
   
-    6. 未完待续...
+    6. 未完待续……
   
 
     
@@ -595,14 +597,14 @@
   
   
     <li class="md-nav__item">
-      <a href="nianiuai-web-hanguanihaninhuuu.html" class="md-nav__link">
+      <a href="nianiuanguohaninhuuuuani.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    7. 案例研究：在 Web 上管理产品数据库
+    7. 案例研究：网络产品数据库管理
   
 
     
@@ -659,22 +661,22 @@
 
 
 
-<h1 id="5-xml-php">5. <span style="color: #365f91">XML 与 PHP</span></h1>
-<p>在本章中，我们将介绍如何在 PHP 中使用 XML（可扩展标记语言）文档。我们将结合上一章讨论的<strong>税务</strong>应用程序来讲解。</p>
-<h2 id="51-xml-xsl">5.1. <span style="color: #4f81bd">XML 文件与 XSL 样式表</span></h2>
-<p>请看以下 XML 文件，它可能代表模拟的结果：</p>
+<h1 id="5-xml-php">5. <span style="color: #365f91">XML 和 PHP</span></h1>
+<p>在本章中，我们将介绍如何在 PHP 中使用 XML（eXtensible 标记语言）文档。我们将以上一章所探讨的<strong>税务</strong>应用程序为例进行说明。</p>
+<h2 id="51-xml-xsl">5.1. <span style="color: #4f81bd">XML 文件和 XSL 样式表</span></h2>
+<p>请看以下 XML 文件，它可能代表模拟结果：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;simulations&gt;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;oui&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;22504&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;non&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;33388&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">&lt;/simulations&gt;</span>
 </code></pre></div>
-<p>在 IE 6 中查看时，会得到以下结果：</p>
+<p>如果使用 IE 6 进行查看，将得到以下结果：</p>
 <p><img src="images/100000000000022900000087517AD5B3.png" width="553" height="135" style="width:14.63cm;height:3.572cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000022900000087517AD5B3.png" /></p>
-<p>IE6 识别出这是一个 XML 文件（得益于文件的 .xml 扩展名），并按其自身的方式进行格式化。而在 Netscape 中，则会显示空白页面。不过，如果你查看源代码（视图/源代码），可以看到原始的 XML 文件：</p>
+<p>IE6 通过文件的 .xml 后缀识别出这是 XML 文件，并以自身特有的方式进行排版。 使用 Netscape 则会显示一个空白页面。然而，如果查看源代码（View/Source），确实可以看到原始的 XML 文件：</p>
 <p><img src="images/10000000000002450000008DA1C6A883.png" width="581" height="141" style="width:15.371cm;height:3.731cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002450000008DA1C6A883.png" /></p>
-<p>为什么 Netscape 没有显示任何内容？因为它需要一个样式表来告诉它如何将 XML 文件转换为可以显示的 HTML 文件。事实证明，当 XML 文件未提供样式表时，IE 6 会使用默认样式表，而本例中正是这种情况。 </p>
-<p>有一种<strong>名为XSL</strong>（可扩展样式表语言）的语言，它允许你描述将XML文件转换为任意文本文件所需的转换过程。XSL支持大量指令，其语法与编程语言极为相似。我们在此不作详细探讨，因为这需要数十页的篇幅。 我们仅介绍两个 XSL 样式表的示例。第一个示例将把 XML 文件 <strong>simulations.xml</strong> 转换为 HTML 代码。我们修改后者，使其指定浏览器可用于将其转换为可显示 HTML 文档的样式表：</p>
+<p>为什么 Netscape 没有显示任何内容？因为它需要一个样式表来告诉它如何将 XML 文件转换为 HTML 文件，这样它才能显示出来。 恰巧 IE 6 本身带有默认样式表，而 XML 则没有提供样式表，这正是此处的情况。 </p>
+<p>有一种名为 <strong>XSL</strong>（eXtensible StyleSheet 语言）的语言，用于描述将 XML 文件转换为任意文本文件所需的转换过程。 XSL支持多种指令，其语法与编程语言极为相似。本文将不作详细阐述，因为这需要数十页的篇幅。 我们仅列举两个 XSL 样式表的示例。第一个样式表用于将 XML 文件转换为 <strong>simulations.xml</strong> 代码。 我们修改该文件，使其指定浏览器可使用的样式表，从而将其转换为浏览器可显示的 HTML 文档：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;simulations.xsl&quot;?&gt;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">&lt;simulations&gt;</span>
@@ -682,14 +684,14 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;non&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;33388&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">&lt;/simulations&gt;</span>
 </code></pre></div>
-<p>XML 命令</p>
+<p>命令 XML</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;simulations.xsl&quot;?&gt;</span>
 </code></pre></div>
-<p>将 <strong>simulations.xsl</strong> 文件指定为类型为 <strong>text/xsl</strong> 的 XML 样式表，即一个包含 XSL 代码的文本文件。浏览器将使用此样式表将 XML 文本转换为 HTML 文档。以下是使用 Netscape 7 加载 XML 文件 <strong>simulations.xml</strong> 时获得的结果：</p>
+<p>将文件 <strong>simulations.xsl</strong> 指定为类型为 <strong>text/xsl 的</strong>样式表（<strong>xml-stylesheet</strong>）c.a.d。一个包含代码的文本文件 XSL。 浏览器将使用此样式表将文本 XML 转换为文档 HTML。以下是在 Netscape 7 中加载文件 XML <strong>simulations.xml</strong> 时获得的结果：</p>
 <p><img src="images/1000000000000178000000D0ADCAE6E2.png" width="376" height="208" style="width:9.947cm;height:5.503cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000178000000D0ADCAE6E2.png" /></p>
-<p>当我们查看文档的源代码（“查看/源代码”）时，看到的是原始的 XML 文档，而不是显示的 HTML 文档：</p>
+<p>当我们查看文档的源代码（View/Source）时，发现的是原始文档 XML，而非显示的 HTML：</p>
 <p><img src="images/10000000000002440000009B40F772B9.png" width="580" height="155" style="width:15.344cm;height:4.101cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002440000009B40F772B9.png" /></p>
-<p>Netscape 使用 <strong>simulations.xsl</strong> 样式表将上面的 XML 文档转换为可显示的 HTML 文档。现在，让我们来看看该样式表的内容：</p>
+<p>Netscape 使用样式表 <strong>simulations.xsl</strong> 将上述文档 XML 转换为可显示的文档 HTML。现在是时候查看该样式表的内容了：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">&lt;xsl:output</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;html&quot;</span><span class="w"> </span><span class="na">indent=</span><span class="s">&quot;yes&quot;</span><span class="nt">/&gt;</span>
@@ -724,9 +726,9 @@
 <a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">  </span><span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </code></pre></div>
 <ul>
-  <li>XSL样式表是一个XML文件，因此必须遵循XML规则。其中一项要求是它必须“格式正确”，这意味着每个开始标签都必须有对应的结束标签。
+  <li>样式表 XSL 是一个 XML 文件，因此遵循其规则。它必须“格式正确”，即所有打开的标签都必须关闭。
   </li>
-  <li>该文件以两条 XML 指令开头，这些指令可在 Windows 环境下的任何 XSL 样式表中包含：
+  <li>该文件以两条命令开头，在 Windows 系统中的任何样式表中均可保留：
   </li>
 </ul>
 
@@ -735,9 +737,9 @@
 </code></pre></div>
 <p><em>encoding=&quot;windows-1252&quot;</em> 属性允许在样式表中使用带重音的字符。</p>
 <ul>
-  <li><mark style="background-color: #ffe994">&lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;</mark> 标签告知 XSL 解释器，我们需要生成“缩进”的 HTML。
+  <li>标签 <mark style="background-color: #ffe994">&lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;</mark> 指示解析器 XSL 生成“缩进”的 HTML 内容。
   </li>
-  <li><mark style="background-color: #ffe994">&lt;xsl:template match=&quot;element&quot;&gt;</mark> 标签用于定义 XML 文档中的元素，<mark style="background-color: #ffe994">&lt;xsl:template ...&gt; </mark>和 <mark style="background-color: #ffe994">&lt;/xsl:template&gt;</mark> 之间的指令将应用于该元素。
+  <li>标签 <mark style="background-color: #ffe994">&lt;xsl:template match=&quot;元素&quot;&gt;</mark> 用于定义 XML 文档中将应用 <mark style="background-color: #ffe994">&lt;xsl:template ...&gt; </mark>和 <mark style="background-color: #ffe994">&lt;/xsl:template&gt;</mark> 之间指令的元素。
   </li>
 </ul>
 
@@ -745,9 +747,9 @@
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>................
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        &lt;/xsl:template&gt;
 </code></pre></div>
-<p>在上例中<mark style="background-color: #ffe994">，“/</mark>”元素指代文档的根节点。这意味着一旦遇到 XML 文档的开头，位于这两个标签之间的 XSL 命令就会被执行。</p>
+<p>在上例中，元素<mark style="background-color: #ffe994">“/</mark>”表示文档的根节点。这意味着一旦遇到文档 XML 的开头，位于两个标签之间的 XSL 命令就会被执行。</p>
 <ul>
-  <li>任何非 XSL 标签的内容都会原样包含在输出流中。XSL 标签本身会被执行，其中部分标签会在输出流中产生结果。让我们来看以下示例：
+  <li>除 XSL 标签外，其余内容将原样写入输出流。XSL 标签会被执行。其中部分标签会在输出流中产生结果。让我们来看以下示例：
   </li>
 </ul>
 
@@ -769,14 +771,14 @@
 <a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>      <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="p">&lt;/</span><span class="nt">xsl:template</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>请注意，正在分析的 XML 文档如下：</p>
+<p>需要说明的是，所分析的文档XML如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">&lt;simulations&gt;</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;oui&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;22504&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;non&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;33388&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nt">&lt;/simulations&gt;</span>
 </code></pre></div>
-<p>从解析的 XML 文档开头（<mark style="background-color: #ffe994">match=&quot;/&quot;</mark>) 开始，XSL 处理器将输出文本</p>
+<p>从所分析的文档 XML 的开头（<mark style="background-color: #ffe994">match=&quot;/&quot;</mark>) 开始，解析器 XSL 将输出文本</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>          <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>            <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Simulations de calculs d&#39;impôts<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -788,16 +790,16 @@
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>            <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>                    <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>marié<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>enfants<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>salaire<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>impôt<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>请注意，原文中我们使用的是 <mark style="background-color: #ffe994">&lt;hr/&gt;</mark>，而不是 <mark style="background-color: #ffe994">&lt;hr&gt;</mark>。在原文中，我们不能写成 <mark style="background-color: #ffe994">&lt;hr&gt;</mark>，因为虽然它是一个有效的 HTML 标签，但作为 XML 标签却是不合法的。然而，我们这里处理的是必须“结构良好”的 XML 文本，这意味着每个标签都必须闭合。 因此我们写成 <mark style="background-color: #ffe994">&lt;hr/&gt;</mark>，并且由于我们写了 <mark style="background-color: #ffe994">&lt;xsl:output text=&quot;html ...&quot;&gt;</mark>，解释器会将文本 <mark style="background-color: #ffe994">&lt;hr/&gt;</mark> 转换为 <mark style="background-color: #ffe994">&lt;hr&gt;</mark>。紧随其后的将是 XSL 命令生成的文本：</p>
+<p>需要注意的是，在原始文本中我们使用的是 <mark style="background-color: #ffe994">&lt;hr/&gt;</mark>，而不是 <mark style="background-color: #ffe994">&lt;hr&gt;</mark>。在原始文本中无法写成 <mark style="background-color: #ffe994">&lt;hr&gt;</mark>，因为虽然它是有效的 HTML 标签，但却是无效的 XML 标签。 然而，我们这里处理的是一个必须“格式正确”的文本，即所有标签都必须闭合。 因此我们写成 <mark style="background-color: #ffe994">&lt;hr/&gt;</mark>，并且因为我们写了 <mark style="background-color: #ffe994">&lt;xsl:output text=&quot;html ...&quot;&gt;</mark>，解释器会将文本 <mark style="background-color: #ffe994">&lt;hr/&gt;</mark> 转换为 <mark style="background-color: #ffe994">&lt;hr&gt;</mark>。紧随其后的是由命令 XSL 生成的文本：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">      </span><span class="o">&lt;</span><span class="n">xsl</span><span class="p">:</span><span class="n">apply</span><span class="o">-</span><span class="n">templates</span><span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="ss">&quot;/simulations/simulation&quot;</span><span class="o">/&gt;</span>
 </code></pre></div>
-<p>我们稍后将看到该文本的内容。最后，解释器将添加以下文本：</p>
+<p>我们稍后将了解该文本的具体内容。最后，解释器会添加以下文本：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>                    &lt;/table&gt;
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>          &lt;/center&gt;
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        &lt;/body&gt;
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>      &lt;/html&gt;
 </code></pre></div>
-<p>命令 <mark style="background-color: #ffe994">&lt;xsl:apply-templates select=&quot;/simulations/simulation&quot;/&gt;</mark> 指示解释器将“模板”应用于 <em>/simulations/simulation</em> 元素。每当 XSL 解释器在已解析的 XML 文本中遇到位于 <mark style="background-color: #ffe994">&lt;simulations&gt;..&lt;/simulations&gt;</mark> 标签内的 <mark style="background-color: #ffe994">&lt;simulation&gt;..&lt;/simulations&gt; </mark>或 <mark style="background-color: #ffe994">&lt;simulation/&gt;</mark> 标签时，该命令都会被执行。 遇到此类标签时，解释器将执行以下模板中的指令：</p>
+<p><mark style="background-color: #ffe994">&lt;xsl:apply-templates select=&quot;/simulations/simulation&quot;/&gt;</mark> 指令要求执行元素 <em>/simulations/simulation</em> 的“模板”。 每当解析器 XSL 在已解析的文本 XML 中遇到位于 <mark style="background-color: #ffe994">&lt;simulations&gt;..&lt;/simulations&gt;</mark> 标签内的 <mark style="background-color: #ffe994">&lt;simulation&gt;..&lt;/simulations&gt; </mark>或 <mark style="background-color: #ffe994">&lt;simulation/&gt;</mark> 标签时，该指令就会被执行。 遇到此类标签时，解释器将执行以下模板中的指令：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">xsl</span><span class="p">:</span><span class="k">template</span><span class="w"> </span><span class="k">match</span><span class="o">=</span><span class="ss">&quot;simulation&quot;</span><span class="o">&gt;</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">          </span><span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">            </span><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">xsl</span><span class="p">:</span><span class="n">value</span><span class="o">-</span><span class="k">of</span><span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="ss">&quot;@marie&quot;</span><span class="o">/&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
@@ -807,20 +809,20 @@
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">       </span><span class="o">&lt;/</span><span class="n">xsl</span><span class="p">:</span><span class="k">template</span><span class="o">&gt;</span>
 </code></pre></div>
-<p>请看以下这些 XML 代码行：</p>
+<p>我们来看以下 XML 行：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&lt;simulations&gt;
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  &lt;simulation marie=&quot;oui&quot; enfants=&quot;2&quot; salaire=&quot;200000&quot; impot=&quot;22504&quot;/&gt;
 </code></pre></div>
-<p>行 <em>&lt;simulation ..&gt;</em> 对应于 XSL 指令 <em>&lt;xsl:apply-templates select=&quot;/simulations/simulation</em>&quot;&gt; 的模板。因此，XSL 解释器将尝试将与该模板匹配的指令应用到它上。它将找到模板 <em>&lt;xsl:template match=&quot;simulation&quot;&gt;</em> 并执行它。 请注意，XSL解释器会将所有非XSL命令的内容原样传递，而XSL命令则会被替换为其执行结果。因此，XSL指令&lt;xsl:value-of select=&quot;@champ&quot;/&gt;会被解析节点（此处为&lt;simulation&gt;节点）的“champ”属性的值所替换。解析前面的XML行将产生以下输出：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>XSL</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>输出</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;tr&gt;&lt;td&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;tr&gt;&lt;td&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;xsl:value-of select=&quot;@marie&quot;/&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">是</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;xsl:value-of select=&quot;@children&quot;/&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;xsl:value-of select=&quot;@salary&quot;/&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">200000</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;xsl:value-of select=&quot;@tax&quot;/&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">22504</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;/tr&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;/tr&gt;</div></td></tr></table>
+<p>行 <em>&lt;simulation ..&gt;</em> 对应于指令 XSL 的模板 <em>&lt;xsl:apply-templates select=&quot;/simulations/simulation</em>&quot;<em>&gt;</em>。因此，解释器 XSL 将尝试应用与该模板对应的指令。 它将找到模板 <em>&lt;xsl:template match=&quot;simulation&quot;&gt;</em> 并执行它。 需要提醒的是，非 XSL 命令的内容会被 XSL 解释器原样保留，而 XSL 命令则会被其执行结果所替换。 因此，指令 XSL &lt;xsl:value-of select=&quot;@champ&quot;/&gt; 会被替换为所解析节点（此处为 &lt;simulation&gt; 节点）的 &quot;champ&quot; 属性的值。对前一行 XML 的解析将产生以下输出结果：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>XSL</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>输出</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;tr&gt;&lt;td&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;tr&gt;&lt;td&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;xsl:value-of select=&quot;@marie&quot;/&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">是</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;xsl:value-of select=&quot;@children&quot;/&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;xsl:value-of select=&quot;@salaire&quot;/&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">200000</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;td&gt;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;xsl:value-of select=&quot;@impot&quot;/&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">22504</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;/tr&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;/td&gt;&lt;/tr&gt;</div></td></tr></table>
 
-<p>总共，XML 行 </p>
+<p>总计，行 XML </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>&lt;simulation marie=&quot;oui&quot; enfants=&quot;2&quot; salaire=&quot;200000&quot; impot=&quot;22504&quot;/&gt;
 </code></pre></div>
-<p>将转换为以下 HTML 代码行：</p>
+<p>将转换为行 HTML：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&lt;tr&gt;&lt;td&gt;oui&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;200000&lt;/td&gt;&lt;td&gt;22504&lt;/td&gt;&lt;/tr&gt;
 </code></pre></div>
-<p>虽然这些解释有些简单，但读者现在应该已经清楚，以下 XML 文本：</p>
+<p>虽然这些解释略显简略，但读者现在应该能够看出，以下文本 XML：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;simulations.xsl&quot;?&gt;</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nt">&lt;simulations&gt;</span>
@@ -828,7 +830,7 @@
 <a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;non&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;33388&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nt">&lt;/simulations&gt;</span>
 </code></pre></div>
-<p>并附有以下 XSL 样式表 <strong>simulations.xsl</strong>：</p>
+<p>附带以下样式表 XSL <strong>simulations.xsl</strong>：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">      </span><span class="nt">&lt;xsl:output</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;html&quot;</span><span class="w"> </span><span class="na">indent=</span><span class="s">&quot;yes&quot;</span><span class="nt">/&gt;</span>
@@ -862,7 +864,7 @@
 <a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">       </span><span class="nt">&lt;/xsl:template&gt;</span>
 <a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">  </span><span class="nt">&lt;/xsl:stylesheet&gt;</span>
 </code></pre></div>
-<p>生成以下 HTML 文本：</p>
+<p>生成以下文本 HTML：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Simulations de calculs d&#39;impôts<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -884,7 +886,7 @@
 <a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>以下是 XML 文件 <strong>simulations.xml</strong> </p>
+<p>文件 XML <strong>simulations.xml</strong> 接下来 </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;simulations.xsl&quot;?&gt;</span>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nt">&lt;simulations&gt;</span>
@@ -892,19 +894,19 @@
 <a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;non&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;33388&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nt">&lt;/simulations&gt;</span>
 </code></pre></div>
-<p>在现代浏览器（此处为 Netscape 7）中查看时，显示效果如下：</p>
+<p>在最新浏览器（此处为 Netscape 7）中显示如下：</p>
 <p><img src="images/1000000000000178000000D0ADCAE6E2.png" width="376" height="208" style="width:9.947cm;height:5.503cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000178000000D0ADCAE6E2.png" /></p>
-<h2 id="52-5">5.2. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">税务应用程序：第 5 版</span></strong></span></h2>
-<h3 id="521-xml-xsl">5.2.1. <span style="color: #4f81bd">税务应用程序的 XML 文件和 XSL 样式表</span></h3>
-<p>让我们回到最初的起点<strong>——税务</strong> Web 应用程序，并回顾一下我们的目标：希望对其进行修改，使发送给客户端的响应采用 XML 格式而非 HTML 格式。该 HTML 响应将附带一个 XSL 样式表，以便浏览器能够显示它。在上段中，我们展示了：</p>
+<h2 id="52-5">5.2. <span style="color: #4f81bd">税务应用程序：第 5 版</span></h2>
+<h3 id="521-xml-xsl">5.2.1. <span style="color: #4f81bd">税务应用程序中的文件 XML 和样式表 XSL</span></h3>
+<p>让我们回到最初的起点——<strong>税务Web</strong>应用程序，并回顾一下我们的目标：希望将其修改为向客户端返回XML格式的响应，而非HTML。 该 HTML 响应将附带一个 XSL 样式表，以便浏览器能够正确显示。在上段中，我们介绍了：</p>
 <ul>
-  <li><b>simulations.xml</b> 文件，这是一个包含税务计算模拟的 XML 响应原型
+  <li>文件 simulations.xml，它是响应 XML 的原型，其中包含税款计算的模拟
   </li>
-  <li><b>simulations.xsl</b> 文件，即随附此 XML 响应的 XSL 样式表
+  <li>文件 simulations.xsl，它将作为样式表 XSL，随附于响应文件 XML
   </li>
 </ul>
 
-<p>我们还必须考虑响应中包含错误的情况。在此情况下，XML响应的原型将是以下 <strong>errors.xml</strong> 文件：</p>
+<p>我们还需考虑包含错误的响应情况。在此情况下，响应 XML 的原型文件将是以下 <strong>erreurs.xml</strong> 文件：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;erreurs.xsl&quot;?&gt;</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nt">&lt;erreurs&gt;</span>
@@ -912,7 +914,7 @@
 <a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="nt">&lt;erreur&gt;</span>erreur<span class="w"> </span>2<span class="nt">&lt;/erreur&gt;</span>
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nt">&lt;/erreurs&gt;</span>
 </code></pre></div>
-<p>用于在浏览器中显示此 XML 文档的 <strong>errors.xsl</strong> 样式表如下：</p>
+<p>用于在浏览器中显示此文档 <strong>XML</strong> 的样式表 erreurs.xsl 如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nt">&lt;xsl:stylesheet</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="nt">&gt;</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">      </span><span class="nt">&lt;xsl:output</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;html&quot;</span><span class="w"> </span><span class="na">indent=</span><span class="s">&quot;yes&quot;</span><span class="nt">/&gt;</span>
@@ -940,8 +942,8 @@
 <a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">        </span><span class="nt">&lt;/xsl:template&gt;</span>
 <a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="nt">&lt;/xsl:stylesheet&gt;</span><span class="w">    </span>
 </code></pre></div>
-<p>本样式表引入了一个此前未曾出现过的 XSL 命令：<em>&lt;xsl:value-of select=&quot;.&quot;/&gt;</em>。该命令输出已解析节点的值，在本例中即 <em>&lt;error&gt;text&lt;/error&gt;</em> 节点。该节点的值是开始标签与结束标签之间的文本，在本例中<em>即为“text”</em>。</p>
-<p><strong>errors.xml</strong> 代码经由 <strong>errors.xsl</strong> 样式表转换后，生成以下 HTML 文档：</p>
+<p>该样式表引入了一个尚未出现的 XSL 指令：<em>&lt;xsl:value-of select=&quot;.&quot;/&gt;</em>。该指令的输出结果为所解析节点的值，此处为 <em>&lt;erreur&gt;texte&lt;/erreur&gt;</em> 节点。 该节点的值即为两个起始标签和结束标签之间的文本，此处为 <em>texte</em>。</p>
+<p>代码 <strong>erreurs.xml</strong> 通过样式表 <strong>erreurs.xsl</strong> 转换为以下文档 HTML：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Simulations de calculs d&#39;impots<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -959,18 +961,18 @@
 <a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>浏览器显示的 <strong>errors</strong>.<strong>xml</strong> 文件及其样式表如下：</p>
+<p>文件 <strong>erreurs.xml</strong> 及其样式表在浏览器中的显示效果如下：</p>
 <p><img src="images/1000000000000247000000CA81F9A71B.png" width="583" height="202" style="width:15.423cm;height:5.345cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000247000000CA81F9A71B.png" /></p>
 <h3 id="522-xmlsimulations">5.2.2. <span style="color: #4f81bd">xmlsimulations 应用程序</span></h3>
-<p>我们创建一个 <strong>xmlsimulations.html</strong> 文件，并将其放置在 <strong>impots</strong> 应用程序目录中。显示的页面如下：</p>
+<p>我们创建一个<strong>名为 xmlsimulations.html</strong> 的文件，并将其放置在 <strong>impots</strong> 应用程序的目录中。显示的页面如下：</p>
 <p><img src="images/10000000000001B1000000CE09F9513D.png" width="433" height="206" style="width:11.455cm;height:5.45cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B1000000CE09F9513D.png" /></p>
-<p>此 HTML 文档是一个<strong>静态</strong>文档。其代码如下：</p>
+<p>该 HTML 文档是一个<strong>静态</strong>文档。其代码如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>impots<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">effacer</span><span class="p">(){</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">          </span><span class="c1">// raz du formulaire</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">           </span><span class="c1">// 表单清空</span>
 <a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">        </span><span class="kd">with</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">frmImpots</span><span class="p">){</span>
 <a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">            </span><span class="nx">optMarie</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">checked</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
 <a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">          </span><span class="nx">optMarie</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">checked</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
@@ -978,31 +980,31 @@
 <a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">          </span><span class="nx">txtSalaire</span><span class="p">.</span><span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">;</span>
 <a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">          </span><span class="nx">txtImpots</span><span class="p">.</span><span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">;</span>
 <a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">        </span><span class="p">}</span><span class="c1">//with</span>
-<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">      </span><span class="p">}</span><span class="c1">//effacer</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">      </span><span class="p">}</span><span class="c1">//清除</span>
 <a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
 <a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">      </span><span class="kd">function</span><span class="w"> </span><span class="nx">calculer</span><span class="p">(){</span>
-<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">          </span><span class="c1">// vérification des paramètres avant de les envoyer au serveur</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">           </span><span class="c1">// 在将参数发送至服务器前进行验证</span>
 <a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">        </span><span class="kd">with</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">frmImpots</span><span class="p">){</span>
-<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="w">          </span><span class="c1">//nbre d&#39;enfants</span>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="w">          </span><span class="c1">//子节点数量</span>
 <a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="w">          </span><span class="nx">champs</span><span class="o">=</span><span class="sr">/^\s*(\d+)\s*$/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">txtEnfants</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
 <a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="nx">champs</span><span class="o">==</span><span class="kc">null</span><span class="p">){</span>
-<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">            </span><span class="c1">// le modéle n&#39;est pas vérifié</span>
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">            </span><span class="c1">// 未验证表单</span>
 <a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="w">            </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Le nombre d&#39;enfants n&#39;a pas été donné ou est incorrect&quot;</span><span class="p">);</span>
 <a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="w">            </span><span class="nx">nbEnfants</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
 <a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
 <a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span class="w">          </span><span class="p">}</span><span class="c1">//if</span>
-<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">          </span><span class="c1">//salaire</span>
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">           </span><span class="c1">//工资</span>
 <a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="w">          </span><span class="nx">champs</span><span class="o">=</span><span class="sr">/^\s*(\d+)\s*$/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">txtSalaire</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
 <a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="nx">champs</span><span class="o">==</span><span class="kc">null</span><span class="p">){</span>
-<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">            </span><span class="c1">// le modéle n&#39;est pas vérifié</span>
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">            </span><span class="c1">// 未验证模板</span>
 <a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a><span class="w">            </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Le salaire n&#39;a pas été donné ou est incorrect&quot;</span><span class="p">);</span>
 <a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a><span class="w">            </span><span class="nx">salaire</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
 <a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
 <a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a><span class="w">          </span><span class="p">}</span><span class="c1">//if</span>
-<a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a><span class="w">          </span><span class="c1">// c&#39;est bon - on envoie</span>
+<a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a><span class="w">          </span><span class="c1">// 没问题 - 发送</span>
 <a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a><span class="w">          </span><span class="nx">submit</span><span class="p">();</span>
-<a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a><span class="w">        </span><span class="p">}</span><span class="c1">//with</span>
-<a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a><span class="w">      </span><span class="p">}</span><span class="c1">//calculer        </span>
+<a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a><span class="w">        </span><span class="p">}</span><span class="c1">//附带</span>
+<a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a><span class="w">      </span><span class="p">}</span><span class="c1">//计算        </span>
 <a id="__codelineno-22-39" name="__codelineno-22-39" href="#__codelineno-22-39"></a><span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <a id="__codelineno-22-40" name="__codelineno-22-40" href="#__codelineno-22-40"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-22-41" name="__codelineno-22-41" href="#__codelineno-22-41"></a>
@@ -1038,17 +1040,17 @@
 <a id="__codelineno-22-71" name="__codelineno-22-71" href="#__codelineno-22-71"></a> <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-22-72" name="__codelineno-22-72" href="#__codelineno-22-72"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>请注意，表单数据被提交到了 URL <strong>/poly/impots/7/xmlsimulations.php</strong>。<em>xmlsimulations.php</em> 应用程序的代码与 <em>impots.php</em> 应用程序的代码非常相似。建议读者回顾后者。以下是输入代码的回顾：</p>
+<p>需要注意的是，表单数据将提交至 URL <strong>/poly/impots/7/xmlsimulations.php</strong>。 应用程序代码 <em>xmlsimulations.php</em> 与应用程序代码 <em>impots.php</em> 非常相似。建议读者重新查阅后者。在此重申输入代码：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>     <span class="c1">// processes the tax form</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>     <span class="c1">// 处理税务表格</span>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>     <span class="c1">// libraries</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>     <span class="c1">// 库</span>
 <a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>  <span class="k">include</span> <span class="s2">&quot;ImpotsDSN.php&quot;</span><span class="p">;</span>
 <a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>   <span class="c1">// session start</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>   <span class="c1">// 开始会话</span>
 <a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>  <span class="nb">session_start</span><span class="p">();</span>
 <a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
-<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>   <span class="c1">// application configuration</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>   <span class="c1">// 应用程序配置</span>
 <a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>  <span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;register_globals&quot;</span><span class="p">,</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
 <a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>  <span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
 <a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>  <span class="nv">$formulaireImpots</span><span class="o">=</span><span class="s2">&quot;impots_form.php&quot;</span><span class="p">;</span>
@@ -1056,75 +1058,75 @@
 <a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>  <span class="nv">$bdImpots</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nx">dsn</span><span class="o">=&gt;</span><span class="s2">&quot;mysql-dbimpots&quot;</span><span class="p">,</span><span class="nx">user</span><span class="o">=&gt;</span><span class="nx">admimpots</span><span class="p">,</span><span class="nx">pwd</span><span class="o">=&gt;</span><span class="nx">mdpimpots</span><span class="p">,</span>
 <a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>      <span class="nx">table</span><span class="o">=&gt;</span><span class="nx">impots</span><span class="p">,</span><span class="nx">limites</span><span class="o">=&gt;</span><span class="nx">limites</span><span class="p">,</span><span class="nx">coeffR</span><span class="o">=&gt;</span><span class="nx">coeffR</span><span class="p">,</span><span class="nx">coeffN</span><span class="o">=&gt;</span><span class="nx">coeffN</span><span class="p">);</span>
 <a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>
-<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>     <span class="c1">// retrieve session parameters</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>     <span class="c1">// 获取会话参数</span>
 <a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>  <span class="nv">$session</span><span class="o">=</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;session&quot;</span><span class="p">];</span>
-<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>   <span class="c1">// valid session?</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>   <span class="c1">// 会话有效吗？</span>
 <a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>  <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$session</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$session</span><span class="p">[</span><span class="nx">objImpots</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$session</span><span class="p">[</span><span class="nx">simulations</span><span class="p">])){</span>
-<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>       <span class="c1">// start a new session</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>       <span class="c1">// 启动新会话</span>
 <a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>    <span class="nv">$session</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nx">objImpots</span><span class="o">=&gt;</span><span class="k">new</span> <span class="nx">ImpotsDSN</span><span class="p">(</span><span class="nv">$bdImpots</span><span class="p">),</span><span class="nx">simulations</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">());</span>
-<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>    <span class="c1">// mistakes?</span>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>    <span class="c1">// 是否出现错误？</span>
 <a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>    <span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$session</span><span class="p">[</span><span class="nx">objImpots</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">erreurs</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span>
 <a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>      <span class="nv">$requête</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nx">erreurs</span><span class="o">=&gt;</span><span class="nv">$session</span><span class="p">[</span><span class="nx">objImpots</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">erreurs</span><span class="p">);</span>
-<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>         <span class="c1">// error page display</span>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>         <span class="c1">// 显示错误页面</span>
 <a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>        <span class="k">include</span> <span class="nv">$erreursImpots</span><span class="p">;</span>
-<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>       <span class="c1">// end</span>
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>       <span class="c1">// 结束</span>
 <a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>      <span class="nv">$session</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
 <a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>      <span class="nx">terminerSession</span><span class="p">(</span><span class="nv">$session</span><span class="p">);</span>
 <a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>    <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>  <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a>
-<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>  <span class="c1">// retrieve the parameters of the current exchange</span>
+<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>  <span class="c1">// 获取当前交换的参数</span>
 <a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">marié</span><span class="p">]</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;optMarie&quot;</span><span class="p">];</span>
 <a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">enfants</span><span class="p">]</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;txtEnfants&quot;</span><span class="p">];</span>
 <a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">salaire</span><span class="p">]</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;txtSalaire&quot;</span><span class="p">];</span>
 <a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a>
-<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>   <span class="c1">// do we have all the parameters?</span>
+<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>   <span class="c1">// 是否已获取所有参数？</span>
 <a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a>  <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">marié</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">enfants</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">salaire</span><span class="p">])){</span>
-<a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a>       <span class="c1">// empty form display</span>
+<a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a>       <span class="c1">// 显示空表单</span>
 <a id="__codelineno-23-43" name="__codelineno-23-43" href="#__codelineno-23-43"></a>    <span class="nv">$requête</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nx">chkoui</span><span class="o">=&gt;</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nx">chknon</span><span class="o">=&gt;</span><span class="s2">&quot;checked&quot;</span><span class="p">,</span><span class="nx">enfants</span><span class="o">=&gt;</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nx">salaire</span><span class="o">=&gt;</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nx">impots</span><span class="o">=&gt;</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <a id="__codelineno-23-44" name="__codelineno-23-44" href="#__codelineno-23-44"></a>            <span class="nx">erreurs</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(),</span><span class="nx">simulations</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">());</span>    
 <a id="__codelineno-23-45" name="__codelineno-23-45" href="#__codelineno-23-45"></a>    <span class="k">include</span> <span class="nv">$formulaireImpots</span><span class="p">;</span>
-<a id="__codelineno-23-46" name="__codelineno-23-46" href="#__codelineno-23-46"></a>     <span class="c1">// end</span>
+<a id="__codelineno-23-46" name="__codelineno-23-46" href="#__codelineno-23-46"></a>     <span class="c1">// 结束</span>
 <a id="__codelineno-23-47" name="__codelineno-23-47" href="#__codelineno-23-47"></a>    <span class="nx">terminerSession</span><span class="p">(</span><span class="nv">$session</span><span class="p">);</span>
 <a id="__codelineno-23-48" name="__codelineno-23-48" href="#__codelineno-23-48"></a>  <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-23-49" name="__codelineno-23-49" href="#__codelineno-23-49"></a>
-<a id="__codelineno-23-50" name="__codelineno-23-50" href="#__codelineno-23-50"></a>   <span class="c1">// checking parameters</span>
+<a id="__codelineno-23-50" name="__codelineno-23-50" href="#__codelineno-23-50"></a>   <span class="c1">// 验证参数</span>
 <a id="__codelineno-23-51" name="__codelineno-23-51" href="#__codelineno-23-51"></a>  <span class="nv">$requête</span><span class="o">=</span><span class="nx">vérifier</span><span class="p">(</span><span class="nv">$requête</span><span class="p">);</span>
 <a id="__codelineno-23-52" name="__codelineno-23-52" href="#__codelineno-23-52"></a>
-<a id="__codelineno-23-53" name="__codelineno-23-53" href="#__codelineno-23-53"></a>   <span class="c1">// mistakes?</span>
+<a id="__codelineno-23-53" name="__codelineno-23-53" href="#__codelineno-23-53"></a>   <span class="c1">// 有错误吗？</span>
 <a id="__codelineno-23-54" name="__codelineno-23-54" href="#__codelineno-23-54"></a>  <span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">erreurs</span><span class="p">])</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span>
-<a id="__codelineno-23-55" name="__codelineno-23-55" href="#__codelineno-23-55"></a>       <span class="c1">// form display</span>
+<a id="__codelineno-23-55" name="__codelineno-23-55" href="#__codelineno-23-55"></a>       <span class="c1">// 显示表单</span>
 <a id="__codelineno-23-56" name="__codelineno-23-56" href="#__codelineno-23-56"></a>    <span class="k">include</span> <span class="s2">&quot;</span><span class="si">$formulaireImpots</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-23-57" name="__codelineno-23-57" href="#__codelineno-23-57"></a>     <span class="c1">// end</span>
+<a id="__codelineno-23-57" name="__codelineno-23-57" href="#__codelineno-23-57"></a>     <span class="c1">// 结束</span>
 <a id="__codelineno-23-58" name="__codelineno-23-58" href="#__codelineno-23-58"></a>    <span class="nx">terminerSession</span><span class="p">(</span><span class="nv">$session</span><span class="p">);</span>
 <a id="__codelineno-23-59" name="__codelineno-23-59" href="#__codelineno-23-59"></a>  <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-23-60" name="__codelineno-23-60" href="#__codelineno-23-60"></a>
-<a id="__codelineno-23-61" name="__codelineno-23-61" href="#__codelineno-23-61"></a>   <span class="c1">// calculating tax payable</span>
+<a id="__codelineno-23-61" name="__codelineno-23-61" href="#__codelineno-23-61"></a>   <span class="c1">// 应缴税款计算</span>
 <a id="__codelineno-23-62" name="__codelineno-23-62" href="#__codelineno-23-62"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">impots</span><span class="p">]</span><span class="o">=</span><span class="nv">$session</span><span class="p">[</span><span class="nx">objImpots</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">calculer</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nx">marié</span><span class="o">=&gt;</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">marié</span><span class="p">],</span>
 <a id="__codelineno-23-63" name="__codelineno-23-63" href="#__codelineno-23-63"></a>        <span class="nx">enfants</span><span class="o">=&gt;</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">enfants</span><span class="p">],</span><span class="nx">salaire</span><span class="o">=&gt;</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">salaire</span><span class="p">]));</span>
 <a id="__codelineno-23-64" name="__codelineno-23-64" href="#__codelineno-23-64"></a>
-<a id="__codelineno-23-65" name="__codelineno-23-65" href="#__codelineno-23-65"></a>   <span class="c1">// one more simulation</span>
+<a id="__codelineno-23-65" name="__codelineno-23-65" href="#__codelineno-23-65"></a>   <span class="c1">// 另一项模拟</span>
 <a id="__codelineno-23-66" name="__codelineno-23-66" href="#__codelineno-23-66"></a>  <span class="nv">$session</span><span class="p">[</span><span class="nx">simulations</span><span class="p">][]</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">marié</span><span class="p">],</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">enfants</span><span class="p">],</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">salaire</span><span class="p">],</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">impots</span><span class="p">]);</span>
 <a id="__codelineno-23-67" name="__codelineno-23-67" href="#__codelineno-23-67"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">simulations</span><span class="p">]</span><span class="o">=</span><span class="nv">$session</span><span class="p">[</span><span class="nx">simulations</span><span class="p">];</span>
 <a id="__codelineno-23-68" name="__codelineno-23-68" href="#__codelineno-23-68"></a>
-<a id="__codelineno-23-69" name="__codelineno-23-69" href="#__codelineno-23-69"></a>   <span class="c1">// form display</span>
+<a id="__codelineno-23-69" name="__codelineno-23-69" href="#__codelineno-23-69"></a>   <span class="c1">// 显示表单</span>
 <a id="__codelineno-23-70" name="__codelineno-23-70" href="#__codelineno-23-70"></a>  <span class="k">include</span> <span class="s2">&quot;</span><span class="si">$formulaireImpots</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-23-71" name="__codelineno-23-71" href="#__codelineno-23-71"></a>
-<a id="__codelineno-23-72" name="__codelineno-23-72" href="#__codelineno-23-72"></a>   <span class="c1">// end</span>
+<a id="__codelineno-23-72" name="__codelineno-23-72" href="#__codelineno-23-72"></a>   <span class="c1">// 结束</span>
 <a id="__codelineno-23-73" name="__codelineno-23-73" href="#__codelineno-23-73"></a>  <span class="nx">terminerSession</span><span class="p">(</span><span class="nv">$session</span><span class="p">);</span>
 <a id="__codelineno-23-74" name="__codelineno-23-74" href="#__codelineno-23-74"></a><span class="o">...</span>
 </code></pre></div>
-<p>HTML 页面是通过<em>“include</em>”语句显示的。这里，我们希望生成 XML 而不是 HTML。只需创建两个新文件：<em>impots_erreurs.php</em> 和 <em>impots_simulations.php</em>，即可生成 XML 而不是 HTML。应用程序的其余部分保持不变。代码如下：</p>
+<p>HTML 页面是由<em>包含语句“... ”</em>生成的。这里我们希望生成 XML，而不是 HTML。 只需编写两个新的应用程序 <em>impots_erreurs.php</em> 和 <em>impots_simulations.php</em>，即可生成 XML 而不是 HTML。 应用程序的其余部分保持不变。代码如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>     <span class="c1">// processes the tax form</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>     <span class="c1">// 处理税务表格</span>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>     <span class="c1">// libraries</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>     <span class="c1">// 库</span>
 <a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>  <span class="k">include</span> <span class="s2">&quot;ImpotsDSN.php&quot;</span><span class="p">;</span>
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>   <span class="c1">// session start</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>   <span class="c1">// 会话启动</span>
 <a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>  <span class="nb">session_start</span><span class="p">();</span>
 <a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>   <span class="c1">// application configuration</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>   <span class="c1">// 应用程序配置</span>
 <a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>  <span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;register_globals&quot;</span><span class="p">,</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
 <a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>  <span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;display_errors&quot;</span><span class="p">,</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
 <a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>  <span class="nv">$formulaireImpots</span><span class="o">=</span><span class="s2">&quot;xmlsimulations.html&quot;</span><span class="p">;</span>
@@ -1133,78 +1135,78 @@
 <a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>  <span class="nv">$bdImpots</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nx">dsn</span><span class="o">=&gt;</span><span class="s2">&quot;mysql-dbimpots&quot;</span><span class="p">,</span><span class="nx">user</span><span class="o">=&gt;</span><span class="nx">admimpots</span><span class="p">,</span><span class="nx">pwd</span><span class="o">=&gt;</span><span class="nx">mdpimpots</span><span class="p">,</span>
 <a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>      <span class="nx">table</span><span class="o">=&gt;</span><span class="nx">impots</span><span class="p">,</span><span class="nx">limites</span><span class="o">=&gt;</span><span class="nx">limites</span><span class="p">,</span><span class="nx">coeffR</span><span class="o">=&gt;</span><span class="nx">coeffR</span><span class="p">,</span><span class="nx">coeffN</span><span class="o">=&gt;</span><span class="nx">coeffN</span><span class="p">);</span>
 <a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>
-<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>     <span class="c1">// retrieve session parameters</span>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>     <span class="c1">// 获取会话参数</span>
 <a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>  <span class="nv">$session</span><span class="o">=</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s2">&quot;session&quot;</span><span class="p">];</span>
-<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>   <span class="c1">// valid session?</span>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>   <span class="c1">// 会话有效吗？</span>
 <a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>  <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$session</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$session</span><span class="p">[</span><span class="nx">objImpots</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$session</span><span class="p">[</span><span class="nx">simulations</span><span class="p">])){</span>
-<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>       <span class="c1">// start a new session</span>
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>       <span class="c1">// 启动新会话</span>
 <a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a>    <span class="nv">$session</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nx">objImpots</span><span class="o">=&gt;</span><span class="k">new</span> <span class="nx">ImpotsDSN</span><span class="p">(</span><span class="nv">$bdImpots</span><span class="p">),</span><span class="nx">simulations</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">());</span>
-<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>    <span class="c1">// mistakes?</span>
+<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a>    <span class="c1">// 是否出现错误？</span>
 <a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>    <span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$session</span><span class="p">[</span><span class="nx">objImpots</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">erreurs</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span>
 <a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>      <span class="nv">$requête</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nx">erreurs</span><span class="o">=&gt;</span><span class="nv">$session</span><span class="p">[</span><span class="nx">objImpots</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">erreurs</span><span class="p">);</span>
-<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>         <span class="c1">// display error page in XML format</span>
+<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a>         <span class="c1">// 以 XML 格式显示错误页面</span>
 <a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a>          <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-type: text/xml&quot;</span><span class="p">);</span>      
 <a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>        <span class="k">include</span> <span class="nv">$erreursImpots</span><span class="p">;</span>
-<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>       <span class="c1">// end</span>
+<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a>       <span class="c1">// 结束</span>
 <a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>      <span class="nv">$session</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
 <a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>      <span class="nx">terminerSession</span><span class="p">(</span><span class="nv">$session</span><span class="p">);</span>
 <a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a>    <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a>  <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a>
-<a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>   <span class="c1">// retrieve the parameters of the current exchange</span>
+<a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>   <span class="c1">// 获取当前交换的参数</span>
 <a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">marié</span><span class="p">]</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;optMarie&quot;</span><span class="p">];</span>
 <a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">enfants</span><span class="p">]</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;txtEnfants&quot;</span><span class="p">];</span>
 <a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">salaire</span><span class="p">]</span><span class="o">=</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;txtSalaire&quot;</span><span class="p">];</span>
 <a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a>
-<a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a>   <span class="c1">// do we have all the parameters?</span>
+<a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a>   <span class="c1">// 是否已获取所有参数？</span>
 <a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a>  <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">marié</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">enfants</span><span class="p">])</span> <span class="o">||</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">salaire</span><span class="p">])){</span>
-<a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a>       <span class="c1">// empty form display</span>
+<a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a>       <span class="c1">// 显示空表单</span>
 <a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a>    <span class="k">include</span> <span class="nv">$formulaireImpots</span><span class="p">;</span>
-<a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a>     <span class="c1">// end</span>
+<a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a>     <span class="c1">// 结束</span>
 <a id="__codelineno-24-47" name="__codelineno-24-47" href="#__codelineno-24-47"></a>    <span class="nx">terminerSession</span><span class="p">(</span><span class="nv">$session</span><span class="p">);</span>
 <a id="__codelineno-24-48" name="__codelineno-24-48" href="#__codelineno-24-48"></a>  <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-24-49" name="__codelineno-24-49" href="#__codelineno-24-49"></a>
-<a id="__codelineno-24-50" name="__codelineno-24-50" href="#__codelineno-24-50"></a>   <span class="c1">// checking parameters</span>
+<a id="__codelineno-24-50" name="__codelineno-24-50" href="#__codelineno-24-50"></a>   <span class="c1">// 验证参数</span>
 <a id="__codelineno-24-51" name="__codelineno-24-51" href="#__codelineno-24-51"></a>  <span class="nv">$requête</span><span class="o">=</span><span class="nx">vérifier</span><span class="p">(</span><span class="nv">$requête</span><span class="p">);</span>
 <a id="__codelineno-24-52" name="__codelineno-24-52" href="#__codelineno-24-52"></a>
-<a id="__codelineno-24-53" name="__codelineno-24-53" href="#__codelineno-24-53"></a>   <span class="c1">// mistakes?</span>
+<a id="__codelineno-24-53" name="__codelineno-24-53" href="#__codelineno-24-53"></a>   <span class="c1">// 有错误吗？</span>
 <a id="__codelineno-24-54" name="__codelineno-24-54" href="#__codelineno-24-54"></a>  <span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">erreurs</span><span class="p">])</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span>
-<a id="__codelineno-24-55" name="__codelineno-24-55" href="#__codelineno-24-55"></a>       <span class="c1">// display errors in XML format</span>
+<a id="__codelineno-24-55" name="__codelineno-24-55" href="#__codelineno-24-55"></a>       <span class="c1">// 以 XML 格式显示错误</span>
 <a id="__codelineno-24-56" name="__codelineno-24-56" href="#__codelineno-24-56"></a>      <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-type: text/xml&quot;</span><span class="p">);</span>    
 <a id="__codelineno-24-57" name="__codelineno-24-57" href="#__codelineno-24-57"></a>    <span class="k">include</span> <span class="s2">&quot;</span><span class="si">$erreursImpots</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-24-58" name="__codelineno-24-58" href="#__codelineno-24-58"></a>     <span class="c1">// end</span>
+<a id="__codelineno-24-58" name="__codelineno-24-58" href="#__codelineno-24-58"></a>     <span class="c1">// 结束</span>
 <a id="__codelineno-24-59" name="__codelineno-24-59" href="#__codelineno-24-59"></a>    <span class="nx">terminerSession</span><span class="p">(</span><span class="nv">$session</span><span class="p">);</span>
 <a id="__codelineno-24-60" name="__codelineno-24-60" href="#__codelineno-24-60"></a>  <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-24-61" name="__codelineno-24-61" href="#__codelineno-24-61"></a>
-<a id="__codelineno-24-62" name="__codelineno-24-62" href="#__codelineno-24-62"></a>   <span class="c1">// calculation of tax payable</span>
+<a id="__codelineno-24-62" name="__codelineno-24-62" href="#__codelineno-24-62"></a>   <span class="c1">// 应缴税款计算</span>
 <a id="__codelineno-24-63" name="__codelineno-24-63" href="#__codelineno-24-63"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">impots</span><span class="p">]</span><span class="o">=</span><span class="nv">$session</span><span class="p">[</span><span class="nx">objImpots</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">calculer</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nx">marié</span><span class="o">=&gt;</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">marié</span><span class="p">],</span>
 <a id="__codelineno-24-64" name="__codelineno-24-64" href="#__codelineno-24-64"></a>        <span class="nx">enfants</span><span class="o">=&gt;</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">enfants</span><span class="p">],</span><span class="nx">salaire</span><span class="o">=&gt;</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">salaire</span><span class="p">]));</span>
 <a id="__codelineno-24-65" name="__codelineno-24-65" href="#__codelineno-24-65"></a>
-<a id="__codelineno-24-66" name="__codelineno-24-66" href="#__codelineno-24-66"></a>   <span class="c1">// one more simulation</span>
+<a id="__codelineno-24-66" name="__codelineno-24-66" href="#__codelineno-24-66"></a>   <span class="c1">// 另一项模拟</span>
 <a id="__codelineno-24-67" name="__codelineno-24-67" href="#__codelineno-24-67"></a>  <span class="nv">$session</span><span class="p">[</span><span class="nx">simulations</span><span class="p">][]</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">marié</span><span class="p">],</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">enfants</span><span class="p">],</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">salaire</span><span class="p">],</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">impots</span><span class="p">]);</span>
 <a id="__codelineno-24-68" name="__codelineno-24-68" href="#__codelineno-24-68"></a>  <span class="nv">$requête</span><span class="p">[</span><span class="nx">simulations</span><span class="p">]</span><span class="o">=</span><span class="nv">$session</span><span class="p">[</span><span class="nx">simulations</span><span class="p">];</span>
 <a id="__codelineno-24-69" name="__codelineno-24-69" href="#__codelineno-24-69"></a>
-<a id="__codelineno-24-70" name="__codelineno-24-70" href="#__codelineno-24-70"></a>   <span class="c1">// display simulations in XML format</span>
+<a id="__codelineno-24-70" name="__codelineno-24-70" href="#__codelineno-24-70"></a>   <span class="c1">// 以 XML 格式显示模拟结果</span>
 <a id="__codelineno-24-71" name="__codelineno-24-71" href="#__codelineno-24-71"></a>  <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Content-type: text/xml&quot;</span><span class="p">);</span>
 <a id="__codelineno-24-72" name="__codelineno-24-72" href="#__codelineno-24-72"></a>  <span class="k">include</span> <span class="s2">&quot;</span><span class="si">$simulationsImpots</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-24-73" name="__codelineno-24-73" href="#__codelineno-24-73"></a>
-<a id="__codelineno-24-74" name="__codelineno-24-74" href="#__codelineno-24-74"></a>   <span class="c1">// end</span>
+<a id="__codelineno-24-74" name="__codelineno-24-74" href="#__codelineno-24-74"></a>   <span class="c1">// 结束</span>
 <a id="__codelineno-24-75" name="__codelineno-24-75" href="#__codelineno-24-75"></a>  <span class="nx">terminerSession</span><span class="p">(</span><span class="nv">$session</span><span class="p">);</span>
 </code></pre></div>
-<p>我们之前已经介绍了将要提供的两种 XML 响应类型，并对其进行了分析，同时也介绍了必须随附的样式表。<strong>imports_simulations.php</strong> 应用程序的代码如下：</p>
+<p>我们之前已经介绍了需要提供的两种响应类型 XML 以及应随附的样式表。应用程序 <strong>impots_simulations.php</strong> 的代码如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>     <span class="c1">// generates XML code for impots application simulations page</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>     <span class="c1">// 生成税款应用程序模拟页面的代码 XML</span>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>   <span class="c1">// some constants</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>   <span class="c1">// 若干常量</span>
 <a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>  <span class="nv">$xslSimulations</span><span class="o">=</span><span class="s2">&quot;simulations.xsl&quot;</span><span class="p">;</span>
 <a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>   <span class="c1">// headers XML</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>   <span class="c1">// XML 的页眉</span>
 <a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>  <span class="k">echo</span> <span class="s2">&quot;&lt;?xml version=</span><span class="se">\&quot;</span><span class="s2">1.0</span><span class="se">\&quot;</span><span class="s2"> encoding=</span><span class="se">\&quot;</span><span class="s2">ISO-8859-1</span><span class="se">\&quot;</span><span class="s2"> ?&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>  <span class="k">echo</span> <span class="s2">&quot;&lt;?xml-stylesheet type=</span><span class="se">\&quot;</span><span class="s2">text/xsl</span><span class="se">\&quot;</span><span class="s2"> href=</span><span class="se">\&quot;</span><span class="si">$xslSimulations</span><span class="se">\&quot;</span><span class="s2"> ?&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>    
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>  <span class="c1">// simulations</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>  <span class="c1">// 模拟</span>
 <a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>  <span class="k">echo</span> <span class="s2">&quot;&lt;simulations&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>  <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nb">count</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">simulations</span><span class="p">]);</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
-<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>      <span class="c1">// simulation $i</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>      <span class="c1">// 模拟$i</span>
 <a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>    <span class="k">echo</span> <span class="s2">&quot;&lt;simulation marie=</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">simulations</span><span class="p">][</span><span class="nv">$i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> &quot;</span><span class="o">.</span>
 <a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>                <span class="s2">&quot;enfants=</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">simulations</span><span class="p">][</span><span class="nv">$i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> &quot;</span><span class="o">.</span>
 <a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>          <span class="s2">&quot;salaire=</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">simulations</span><span class="p">][</span><span class="nv">$i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> &quot;</span><span class="o">.</span>
@@ -1213,7 +1215,7 @@
 <a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>  <span class="k">echo</span> <span class="s2">&quot;&lt;/simulations&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="cp">?&gt;</span>
 </code></pre></div>
-<p>此代码使用 <em>$query</em> 字典生成类似于以下的 XML 代码：</p>
+<p>该代码可基于字典 <em>$requête</em> 生成类似于以下格式的 XML 代码：</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;<span style="background-color:#ffe994">simulations.xsl</span>&quot; ?&gt;</span></span>
@@ -1224,46 +1226,46 @@
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;/simulations&gt;</span></span>
 </code></pre></div>
 
-<p><em>simulations.xsl</em> 样式表将把这段 XML 代码转换为 HTML 代码。</p>
-<p><strong>imports_erreurs.php</strong> 应用程序的代码如下：</p>
+<p>样式表 <em>simulations.xsl</em> 将把代码 XML 转换为代码 HTML。</p>
+<p>应用程序代码 <strong>impots_erreurs.php</strong> 如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>     <span class="c1">// generates code XML for impots application error page</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>     <span class="c1">// 生成应用程序 impots 错误页面的代码 XML</span>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>   <span class="c1">// some constants</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>   <span class="c1">// 一些常量</span>
 <a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>  <span class="nv">$xslErreurs</span><span class="o">=</span><span class="s2">&quot;erreurs.xsl&quot;</span><span class="p">;</span>
 <a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>   <span class="c1">// headers XML</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>   <span class="c1">// XML 的头部</span>
 <a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>  <span class="k">echo</span> <span class="s2">&quot;&lt;?xml version=</span><span class="se">\&quot;</span><span class="s2">1.0</span><span class="se">\&quot;</span><span class="s2"> encoding=</span><span class="se">\&quot;</span><span class="s2">ISO-8859-1</span><span class="se">\&quot;</span><span class="s2"> ?&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>  <span class="k">echo</span> <span class="s2">&quot;&lt;?xml-stylesheet type=</span><span class="se">\&quot;</span><span class="s2">text/xsl</span><span class="se">\&quot;</span><span class="s2"> href=</span><span class="se">\&quot;</span><span class="si">$xslErreurs</span><span class="se">\&quot;</span><span class="s2"> ?&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>   <span class="c1">// errors</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>   <span class="c1">// 错误</span>
 <a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>  <span class="k">echo</span> <span class="s2">&quot;&lt;erreurs&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>  <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nb">count</span><span class="p">(</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">erreurs</span><span class="p">]);</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
-<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>      <span class="c1">// error $i</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>      <span class="c1">// 错误$i</span>
 <a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>    <span class="k">echo</span> <span class="s2">&quot;&lt;erreur&gt;&quot;</span><span class="o">.</span><span class="nv">$requête</span><span class="p">[</span><span class="nx">erreurs</span><span class="p">][</span><span class="nv">$i</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;/erreur&gt;&quot;</span><span class="p">;</span>
 <a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>  <span class="p">}</span><span class="c1">//for</span>
 <a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>  <span class="k">echo</span> <span class="s2">&quot;&lt;/erreurs&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="cp">?&gt;</span>
 </code></pre></div>
-<p>此代码使用 <em>$request</em> 字典生成类似于以下的 XML 代码：</p>
+<p>该代码可基于字典 <em>$requête</em> 生成类似于以下格式的 XML 代码：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;erreurs.xsl&quot; ?&gt;</span>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nt">&lt;erreurs&gt;</span>
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nt">&lt;erreur&gt;</span>Impossible<span class="w"> </span>d&#39;ouvrir<span class="w"> </span>la<span class="w"> </span>base<span class="w"> </span>DSN<span class="w"> </span>[mysql-dbimpots]<span class="w"> </span>(S1000)<span class="nt">&lt;/erreur&gt;</span>
 <a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nt">&lt;/erreurs&gt;</span>
 </code></pre></div>
-<p><em>errors.xsl</em> 样式表将把此 XML 代码转换为 HTML 代码。</p>
+<p>样式表 <em>erreurs.xsl</em> 将把代码 XML 转换为代码 HTML。</p>
 <p>让我们来看一个简单的示例：</p>
 <p><img src="images/1000000000000181000000D5F3D60F9A.png" width="385" height="213" style="width:10.185cm;height:5.636cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000181000000D5F3D60F9A.png" /></p>
-<p>MySQL 数据库管理系统未运行。随后我们收到以下响应：</p>
+<p>SGBD MySQL 未被调用。因此，我们收到以下响应：</p>
 <p><img src="images/1000000000000286000000C83CA459ED.png" width="646" height="200" style="width:17.09cm;height:5.292cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000286000000C83CA459ED.png" /></p>
-<p>如果查看浏览器接收到的源代码，我们会看到以下内容：</p>
+<p>如果查看浏览器接收到的源代码，会看到如下内容：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;erreurs.xsl&quot; ?&gt;</span>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nt">&lt;erreurs&gt;</span>
 <a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="nt">&lt;erreur&gt;</span>Impossible<span class="w"> </span>d&#39;ouvrir<span class="w"> </span>la<span class="w"> </span>base<span class="w"> </span>DSN<span class="w"> </span>[mysql-dbimpots]<span class="w"> </span>(S1000)<span class="nt">&lt;/erreur&gt;</span>
 <a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="nt">&lt;/erreurs&gt;</span>
 </code></pre></div>
-<p>现在，我们启动 MySQL 数据库管理系统并运行一系列模拟。我们得到以下响应：</p>
+<p>现在，我们运行 SGBD MySQL 并进行一系列不同的模拟。我们得到以下结果：</p>
 <p><img src="images/10000000000001A200000105EBD0ECBD.png" width="418" height="261" style="width:11.058cm;height:6.906cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A200000105EBD0ECBD.png" /></p>
 <p>浏览器接收到的代码如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span>
@@ -1275,15 +1277,15 @@
 <a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;oui&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;16400&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="nt">&lt;/simulations&gt;</span>
 </code></pre></div>
-<p>请注意，我们的新应用程序比之前的版本更易于维护。部分工作已转移至XSL样式表中。这种新的任务分工的优势在于：一旦响应的XML格式确定，样式表的开发便与应用程序的开发相互独立。</p>
-<h2 id="53-php-xml">5.3. <span style="color: #4f81bd">在 PHP 中解析 XML 文档</span></h2>
-<p>我们<strong>税务</strong>应用程序的下一个版本将作为先前 <em>xmlsimulations</em> 应用程序的客户端程序。因此，我们的客户端将接收 XML 代码，并需对其进行解析以提取所需信息。现在，我们将暂时搁置各版本的开发，学习如何在 PHP 中解析 XML 文档。我们将通过以下示例进行演示： </p>
+<p>值得注意的是，我们的新应用程序比之前的版本更易于维护。部分工作已转移到样式表 XSL 上。 这种新的任务分配方式的优势在于：一旦确定了响应的 XML 格式，样式表的开发就与应用程序的开发相互独立。</p>
+<h2 id="53-xml-php">5.3. <span style="color: #4f81bd">将 XML 文档解析为 PHP</span></h2>
+<p>我们<strong>税务</strong>应用程序的下一个版本将作为前一版本 <em>xmlsimulations</em> 的客户端程序。因此，我们的客户端将接收 XML 格式的数据，并需对其进行解析以提取所需信息。 在此，我们将暂停对各版本的介绍，学习如何将 XML 文档解析为 PHP。我们将通过以下示例进行演示： </p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">dos&gt;<span style="background-color:#ffe994">e:\php43\php.exe xmlParser.php</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">syntaxe : xmlParser.php fichierXML</span></span>
 </code></pre></div>
 
-<p><em>xmlParser.php</em> 应用程序接受一个参数：待解析的 XML 文档的 URI（统一资源标识符）。在本例中，该 URI 仅为位于 <em>xmlParser.php</em> 应用程序目录下的某个 XML 文件的名称。下面来看两个执行示例。在第一个示例中，待解析的 XML 文件是以下 <strong>errors.xml</strong> 文件：</p>
+<p><em>xmlParser.php应用程序</em>支持一个参数：待分析文档XML的URI（统一资源标识符）。 在本例中，该 URI 仅为<em>位于应用程序目录中的</em> XML 文件的名称。下面看两个运行示例。 在第一个示例中，被分析的 XML 文件是以下 <strong>erreurs.xml</strong> 文件：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;erreurs.xsl&quot;?&gt;</span>
 <a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nt">&lt;erreurs&gt;</span>
@@ -1291,7 +1293,7 @@
 <a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">  </span><span class="nt">&lt;erreur&gt;</span>erreur<span class="w"> </span>2<span class="nt">&lt;/erreur&gt;</span>
 <a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="nt">&lt;/erreurs&gt;</span>
 </code></pre></div>
-<p>分析得出以下结果：</p>
+<p>分析结果如下：</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">dos&gt;<span style="background-color:#ffe994">e:\php43\php.exe xmlParser.php erreurs.xml</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">ERREURS</span></span>
@@ -1304,7 +1306,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/ERREURS</span></span>
 </code></pre></div>
 
-<p>我们尚未介绍 <em>xmlParser.php</em> 应用程序的功能，但在此我们可以看到，它会显示已解析 XML 文档的结构。第二个示例解析了以下 XML 文件：<strong>simulations.xml</strong>：</p>
+<p>我们尚未说明<em>xmlParser.php应用程序</em>的功能，但从这里可以看出，它显示了已分析文档XML的结构。 第二个示例分析了以下文件：XML <strong>simulations.xml</strong>：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;simulations.xsl&quot;?&gt;</span>
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nt">&lt;simulations&gt;</span>
@@ -1312,7 +1314,7 @@
 <a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">  </span><span class="nt">&lt;simulation</span><span class="w"> </span><span class="na">marie=</span><span class="s">&quot;non&quot;</span><span class="w"> </span><span class="na">enfants=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="na">salaire=</span><span class="s">&quot;200000&quot;</span><span class="w"> </span><span class="na">impot=</span><span class="s">&quot;33388&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="nt">&lt;/simulations&gt;</span>
 </code></pre></div>
-<p>分析得出以下结果：</p>
+<p>分析结果如下：</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">dos&gt;<span style="background-color:#ffe994">e:\php43\php.exe xmlParser.php simulations.xml</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">SIMULATIONS</span></span>
@@ -1323,102 +1325,102 @@
 <span class="odt-code-line"><span class="odt-code-line-content">/SIMULATIONS</span></span>
 </code></pre></div>
 
-<p><em>xmlParser.php</em> 应用程序包含了我们在<strong>税务</strong>应用程序中所需的一切，因为它能够同时处理 Web 服务器可能发送的错误和模拟数据。让我们来查看其代码：</p>
+<p><em>xmlParser.php</em> 应用程序包含了我们在<strong>税务</strong>应用程序中所需的一切，因为它能够识别 Web 服务器可能发送的错误或模拟数据。让我们来看看它的代码：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">&lt;?php</span>
-<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>   <span class="c1">// syntax $0 fichierXML</span>
-<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>   <span class="c1">// displays the structure and contents of the fichierXML file</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>   <span class="c1">// 语法 $0 fichierXML</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>   <span class="c1">// 显示文件的结构和内容 fichierXML</span>
 <a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
-<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>   <span class="c1">// call verification</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>   <span class="c1">// 调用验证</span>
 <a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>  <span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$argv</span><span class="p">)</span><span class="o">!=</span><span class="mi">2</span><span class="p">){</span>
-<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>       <span class="c1">// error msg</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>       <span class="c1">// 错误消息</span>
 <a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>    <span class="nb">fwrite</span><span class="p">(</span><span class="nx">STDERR</span><span class="p">,</span><span class="s2">&quot;syntaxe : </span><span class="si">$argv[0]</span><span class="s2"> fichierXML</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>     <span class="c1">// end</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>     <span class="c1">// 结束</span>
 <a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>    <span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>  <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>
-<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>   <span class="c1">// initializations</span>
-<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>  <span class="nv">$file</span><span class="o">=</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>       <span class="c1">// the xml file</span>
-<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>  <span class="nv">$depth</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>               <span class="c1">// indentation level=depth in tree structure</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>   <span class="c1">// 初始化</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>  <span class="nv">$file</span><span class="o">=</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>       <span class="c1">// XML 文件</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>  <span class="nv">$depth</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>               <span class="c1">// 缩进级别=树结构中的深度</span>
 <a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>
-<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>   <span class="c1">// the program</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>   <span class="c1">// 程序</span>
 <a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>
-<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>   <span class="c1">// create an xml text analysis object</span>
+<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>   <span class="c1">// 创建一个 XML 文本解析对象</span>
 <a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>  <span class="nv">$xml_parser</span><span class="o">=</span><span class="nb">xml_parser_create</span><span class="p">();</span>
 <a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>
-<a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>   <span class="c1">// indicate which functions to execute at the beginning and end of the tag</span>
+<a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>   <span class="c1">// 指定在标签开始和结束时执行哪些函数</span>
 <a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a>  <span class="nb">xml_set_element_handler</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="s2">&quot;startElement&quot;</span><span class="p">,</span><span class="s2">&quot;endElement&quot;</span><span class="p">);</span>
 <a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a>
-<a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a>   <span class="c1">// indicates which function to execute when data is encountered</span>
+<a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a>   <span class="c1">// 指定在遇到数据时执行的函数</span>
 <a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a>  <span class="nb">xml_set_character_data_handler</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="s2">&quot;afficheData&quot;</span><span class="p">);</span>
 <a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a>
-<a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a>  <span class="c1">// open xml file in read mode</span>
+<a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a>  <span class="c1">// 以读取模式打开 XML 文件</span>
 <a id="__codelineno-32-29" name="__codelineno-32-29" href="#__codelineno-32-29"></a>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="p">(</span><span class="nv">$fp</span><span class="o">=@</span><span class="nb">fopen</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">))){</span>
 <a id="__codelineno-32-30" name="__codelineno-32-30" href="#__codelineno-32-30"></a>    <span class="nb">fwrite</span><span class="p">(</span><span class="nx">STDERR</span><span class="p">,</span><span class="s2">&quot;impossible d&#39;ouvrir le fichier xml </span><span class="si">$file</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 <a id="__codelineno-32-31" name="__codelineno-32-31" href="#__codelineno-32-31"></a>    <span class="k">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <a id="__codelineno-32-32" name="__codelineno-32-32" href="#__codelineno-32-32"></a>  <span class="p">}</span><span class="c1">//if</span>
-<a id="__codelineno-32-33" name="__codelineno-32-33" href="#__codelineno-32-33"></a>   <span class="c1">// xml file processing in blocks of 4096 bytes</span>
+<a id="__codelineno-32-33" name="__codelineno-32-33" href="#__codelineno-32-33"></a>   <span class="c1">// 以4096字节为单位处理XML文件</span>
 <a id="__codelineno-32-34" name="__codelineno-32-34" href="#__codelineno-32-34"></a>  <span class="k">while</span><span class="p">(</span><span class="nv">$data</span><span class="o">=</span><span class="nb">fread</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span><span class="mi">4096</span><span class="p">)){</span>
-<a id="__codelineno-32-35" name="__codelineno-32-35" href="#__codelineno-32-35"></a>    <span class="c1">// analysis of read data</span>
+<a id="__codelineno-32-35" name="__codelineno-32-35" href="#__codelineno-32-35"></a>    <span class="c1">// 分析读取的数据</span>
 <a id="__codelineno-32-36" name="__codelineno-32-36" href="#__codelineno-32-36"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">xml_parse</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="nv">$data</span><span class="p">,</span><span class="nb">feof</span><span class="p">(</span><span class="nv">$fp</span><span class="p">))){</span>
-<a id="__codelineno-32-37" name="__codelineno-32-37" href="#__codelineno-32-37"></a>      <span class="c1">// an error has occurred</span>
+<a id="__codelineno-32-37" name="__codelineno-32-37" href="#__codelineno-32-37"></a>      <span class="c1">// 发生错误</span>
 <a id="__codelineno-32-38" name="__codelineno-32-38" href="#__codelineno-32-38"></a>      <span class="nb">fprintf</span><span class="p">(</span><span class="nx">STDERR</span><span class="p">,</span><span class="s2">&quot;erreur XML : %s à la ligne %d</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
 <a id="__codelineno-32-39" name="__codelineno-32-39" href="#__codelineno-32-39"></a>        <span class="nb">xml_error_string</span><span class="p">(</span><span class="nb">xml_get_error_code</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">)),</span>
 <a id="__codelineno-32-40" name="__codelineno-32-40" href="#__codelineno-32-40"></a>        <span class="nb">xml_get_current_line_number</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">));</span>
-<a id="__codelineno-32-41" name="__codelineno-32-41" href="#__codelineno-32-41"></a>       <span class="c1">// end</span>
+<a id="__codelineno-32-41" name="__codelineno-32-41" href="#__codelineno-32-41"></a>       <span class="c1">// 结束</span>
 <a id="__codelineno-32-42" name="__codelineno-32-42" href="#__codelineno-32-42"></a>      <span class="k">exit</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 <a id="__codelineno-32-43" name="__codelineno-32-43" href="#__codelineno-32-43"></a>    <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-32-44" name="__codelineno-32-44" href="#__codelineno-32-44"></a>  <span class="p">}</span><span class="c1">//while</span>
-<a id="__codelineno-32-45" name="__codelineno-32-45" href="#__codelineno-32-45"></a>  <span class="c1">// the file has been browsed</span>
-<a id="__codelineno-32-46" name="__codelineno-32-46" href="#__codelineno-32-46"></a>   <span class="c1">// free up resources occupied by the xml parser</span>
+<a id="__codelineno-32-45" name="__codelineno-32-45" href="#__codelineno-32-45"></a>  <span class="c1">// 文件已遍历完毕</span>
+<a id="__codelineno-32-46" name="__codelineno-32-46" href="#__codelineno-32-46"></a>   <span class="c1">// 释放 XML 解析器占用的资源</span>
 <a id="__codelineno-32-47" name="__codelineno-32-47" href="#__codelineno-32-47"></a>  <span class="nb">xml_parser_free</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">);</span>
-<a id="__codelineno-32-48" name="__codelineno-32-48" href="#__codelineno-32-48"></a>   <span class="c1">// end</span>
+<a id="__codelineno-32-48" name="__codelineno-32-48" href="#__codelineno-32-48"></a>   <span class="c1">// 结束</span>
 <a id="__codelineno-32-49" name="__codelineno-32-49" href="#__codelineno-32-49"></a>  <span class="k">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <a id="__codelineno-32-50" name="__codelineno-32-50" href="#__codelineno-32-50"></a>
 <a id="__codelineno-32-51" name="__codelineno-32-51" href="#__codelineno-32-51"></a>    <span class="c1">// -----------------------------------------------------------  </span>
-<a id="__codelineno-32-52" name="__codelineno-32-52" href="#__codelineno-32-52"></a>   <span class="c1">// function called when a start tag is encountered</span>
+<a id="__codelineno-32-52" name="__codelineno-32-52" href="#__codelineno-32-52"></a>   <span class="c1">// 遇到开始标签时调用的函数</span>
 <a id="__codelineno-32-53" name="__codelineno-32-53" href="#__codelineno-32-53"></a>  <span class="k">function</span> <span class="nf">startElement</span><span class="p">(</span><span class="nv">$parser</span><span class="p">,</span><span class="nv">$name</span><span class="p">,</span><span class="nv">$attributs</span><span class="p">){</span>
 <a id="__codelineno-32-54" name="__codelineno-32-54" href="#__codelineno-32-54"></a>    <span class="k">global</span> <span class="nv">$depth</span><span class="p">;</span>
-<a id="__codelineno-32-55" name="__codelineno-32-55" href="#__codelineno-32-55"></a>     <span class="c1">// a sequence of spaces (indentation)</span>
+<a id="__codelineno-32-55" name="__codelineno-32-55" href="#__codelineno-32-55"></a>     <span class="c1">// 一连串空格（缩进）</span>
 <a id="__codelineno-32-56" name="__codelineno-32-56" href="#__codelineno-32-56"></a>    <span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$depth</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
 <a id="__codelineno-32-57" name="__codelineno-32-57" href="#__codelineno-32-57"></a>      <span class="k">print</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
 <a id="__codelineno-32-58" name="__codelineno-32-58" href="#__codelineno-32-58"></a>    <span class="p">}</span><span class="c1">//for</span>
-<a id="__codelineno-32-59" name="__codelineno-32-59" href="#__codelineno-32-59"></a>     <span class="c1">// attributes</span>
+<a id="__codelineno-32-59" name="__codelineno-32-59" href="#__codelineno-32-59"></a>     <span class="c1">// 属性</span>
 <a id="__codelineno-32-60" name="__codelineno-32-60" href="#__codelineno-32-60"></a>    <span class="nv">$précisions</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">;</span>
 <a id="__codelineno-32-61" name="__codelineno-32-61" href="#__codelineno-32-61"></a>    <span class="k">while</span><span class="p">(</span><span class="k">list</span><span class="p">(</span><span class="nv">$attrib</span><span class="p">,</span><span class="nv">$valeur</span><span class="p">)</span><span class="o">=</span><span class="nb">each</span><span class="p">(</span><span class="nv">$attributs</span><span class="p">)){</span>
 <a id="__codelineno-32-62" name="__codelineno-32-62" href="#__codelineno-32-62"></a>      <span class="nv">$précisions</span><span class="o">.=</span><span class="s2">&quot;(</span><span class="si">$attrib</span><span class="s2">,</span><span class="si">$valeur</span><span class="s2">) &quot;</span><span class="p">;</span>
 <a id="__codelineno-32-63" name="__codelineno-32-63" href="#__codelineno-32-63"></a>    <span class="p">}</span>
-<a id="__codelineno-32-64" name="__codelineno-32-64" href="#__codelineno-32-64"></a>     <span class="c1">// displays the tag name and any attributes</span>
+<a id="__codelineno-32-64" name="__codelineno-32-64" href="#__codelineno-32-64"></a>     <span class="c1">// 显示标签名称及可能的属性</span>
 <a id="__codelineno-32-65" name="__codelineno-32-65" href="#__codelineno-32-65"></a>    <span class="k">if</span><span class="p">(</span><span class="nv">$précisions</span><span class="p">)</span>
 <a id="__codelineno-32-66" name="__codelineno-32-66" href="#__codelineno-32-66"></a>      <span class="k">print</span> <span class="s2">&quot;</span><span class="si">$name</span><span class="s2">,</span><span class="si">$précisions</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-32-67" name="__codelineno-32-67" href="#__codelineno-32-67"></a>    <span class="k">else</span> <span class="k">print</span> <span class="s2">&quot;</span><span class="si">$name</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<a id="__codelineno-32-68" name="__codelineno-32-68" href="#__codelineno-32-68"></a>     <span class="c1">// an extra level of tree structure</span>
+<a id="__codelineno-32-68" name="__codelineno-32-68" href="#__codelineno-32-68"></a>     <span class="c1">// 增加一层树结构</span>
 <a id="__codelineno-32-69" name="__codelineno-32-69" href="#__codelineno-32-69"></a>    <span class="nv">$depth</span><span class="o">++</span><span class="p">;</span>
 <a id="__codelineno-32-70" name="__codelineno-32-70" href="#__codelineno-32-70"></a>  <span class="p">}</span><span class="c1">//startElement</span>
 <a id="__codelineno-32-71" name="__codelineno-32-71" href="#__codelineno-32-71"></a>
 <a id="__codelineno-32-72" name="__codelineno-32-72" href="#__codelineno-32-72"></a>    <span class="c1">// -----------------------------------------------------------  </span>
-<a id="__codelineno-32-73" name="__codelineno-32-73" href="#__codelineno-32-73"></a>   <span class="c1">// the function called when an end tag is encountered</span>
+<a id="__codelineno-32-73" name="__codelineno-32-73" href="#__codelineno-32-73"></a>   <span class="c1">// 遇到结束标签时调用的函数</span>
 <a id="__codelineno-32-74" name="__codelineno-32-74" href="#__codelineno-32-74"></a>  <span class="k">function</span> <span class="nf">endElement</span><span class="p">(</span><span class="nv">$parser</span><span class="p">,</span><span class="nv">$name</span><span class="p">){</span>
-<a id="__codelineno-32-75" name="__codelineno-32-75" href="#__codelineno-32-75"></a>     <span class="c1">// end of tag</span>
-<a id="__codelineno-32-76" name="__codelineno-32-76" href="#__codelineno-32-76"></a>     <span class="c1">// indentation level</span>
+<a id="__codelineno-32-75" name="__codelineno-32-75" href="#__codelineno-32-75"></a>     <span class="c1">// 标签结束</span>
+<a id="__codelineno-32-76" name="__codelineno-32-76" href="#__codelineno-32-76"></a>     <span class="c1">// 缩进级别</span>
 <a id="__codelineno-32-77" name="__codelineno-32-77" href="#__codelineno-32-77"></a>    <span class="k">global</span> <span class="nv">$depth</span><span class="p">;</span>
 <a id="__codelineno-32-78" name="__codelineno-32-78" href="#__codelineno-32-78"></a>    <span class="nv">$depth</span><span class="o">--</span><span class="p">;</span>
-<a id="__codelineno-32-79" name="__codelineno-32-79" href="#__codelineno-32-79"></a>    <span class="c1">// a sequence of spaces (indentation)</span>
+<a id="__codelineno-32-79" name="__codelineno-32-79" href="#__codelineno-32-79"></a>    <span class="c1">// 一串空格（缩进）</span>
 <a id="__codelineno-32-80" name="__codelineno-32-80" href="#__codelineno-32-80"></a>    <span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$depth</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
 <a id="__codelineno-32-81" name="__codelineno-32-81" href="#__codelineno-32-81"></a>      <span class="k">echo</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
 <a id="__codelineno-32-82" name="__codelineno-32-82" href="#__codelineno-32-82"></a>    <span class="p">}</span><span class="c1">//for</span>
-<a id="__codelineno-32-83" name="__codelineno-32-83" href="#__codelineno-32-83"></a>     <span class="c1">// tag name</span>
+<a id="__codelineno-32-83" name="__codelineno-32-83" href="#__codelineno-32-83"></a>     <span class="c1">// 标签名称</span>
 <a id="__codelineno-32-84" name="__codelineno-32-84" href="#__codelineno-32-84"></a>    <span class="k">echo</span> <span class="s2">&quot;/</span><span class="si">$name</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <a id="__codelineno-32-85" name="__codelineno-32-85" href="#__codelineno-32-85"></a>  <span class="p">}</span><span class="c1">//endElement</span>
 <a id="__codelineno-32-86" name="__codelineno-32-86" href="#__codelineno-32-86"></a>
 <a id="__codelineno-32-87" name="__codelineno-32-87" href="#__codelineno-32-87"></a>    <span class="c1">// -----------------------------------------------------------  </span>
-<a id="__codelineno-32-88" name="__codelineno-32-88" href="#__codelineno-32-88"></a>   <span class="c1">// data display function</span>
+<a id="__codelineno-32-88" name="__codelineno-32-88" href="#__codelineno-32-88"></a>   <span class="c1">// 数据显示函数</span>
 <a id="__codelineno-32-89" name="__codelineno-32-89" href="#__codelineno-32-89"></a>  <span class="k">function</span> <span class="nf">afficheData</span><span class="p">(</span><span class="nv">$parser</span><span class="p">,</span><span class="nv">$data</span><span class="p">){</span>
-<a id="__codelineno-32-90" name="__codelineno-32-90" href="#__codelineno-32-90"></a>     <span class="c1">// indentation level</span>
+<a id="__codelineno-32-90" name="__codelineno-32-90" href="#__codelineno-32-90"></a>     <span class="c1">// 缩进级别</span>
 <a id="__codelineno-32-91" name="__codelineno-32-91" href="#__codelineno-32-91"></a>    <span class="k">global</span> <span class="nv">$depth</span><span class="p">;</span>
-<a id="__codelineno-32-92" name="__codelineno-32-92" href="#__codelineno-32-92"></a>     <span class="c1">// data are displayed</span>
+<a id="__codelineno-32-92" name="__codelineno-32-92" href="#__codelineno-32-92"></a>     <span class="c1">// 显示数据</span>
 <a id="__codelineno-32-93" name="__codelineno-32-93" href="#__codelineno-32-93"></a>    <span class="nv">$data</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 <a id="__codelineno-32-94" name="__codelineno-32-94" href="#__codelineno-32-94"></a>    <span class="k">if</span><span class="p">(</span><span class="nv">$data</span><span class="o">!=</span><span class="s2">&quot;&quot;</span><span class="p">){</span>
-<a id="__codelineno-32-95" name="__codelineno-32-95" href="#__codelineno-32-95"></a>       <span class="c1">// a sequence of spaces (indentation)</span>
+<a id="__codelineno-32-95" name="__codelineno-32-95" href="#__codelineno-32-95"></a>       <span class="c1">// 一串空格（缩进）</span>
 <a id="__codelineno-32-96" name="__codelineno-32-96" href="#__codelineno-32-96"></a>      <span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="nv">$depth</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
 <a id="__codelineno-32-97" name="__codelineno-32-97" href="#__codelineno-32-97"></a>        <span class="k">echo</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
 <a id="__codelineno-32-98" name="__codelineno-32-98" href="#__codelineno-32-98"></a>      <span class="p">}</span><span class="c1">//for</span>
@@ -1427,102 +1429,102 @@
 <a id="__codelineno-32-101" name="__codelineno-32-101" href="#__codelineno-32-101"></a>  <span class="p">}</span><span class="c1">//afficheData</span>
 <a id="__codelineno-32-102" name="__codelineno-32-102" href="#__codelineno-32-102"></a><span class="cp">?&gt;</span>
 </code></pre></div>
-<p>让我们来分析一下与 XML 相关的代码。要解析 XML 文档，我们的应用程序需要一个 XML 解析器。</p>
+<p>让我们研究一下与 XML 相关的代码。为了分析 XML 文档，我们的应用程序需要一个名为 XML 的代码解析器，通常称为“解析器”。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="o">...</span>
-<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>   <span class="c1">// create an xml text analysis object</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>   <span class="c1">// 创建一个 XML 文本分析对象</span>
 <a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>  <span class="nv">$xml_parser</span><span class="o">=</span><span class="nb">xml_parser_create</span><span class="p">();</span>
 </code></pre></div>
-<p>当解析器分析 XML 文档时，它会触发诸如“遇到文档开头”、“遇到标签开头”、“遇到标签属性”、“遇到标签内容”、“遇到标签结尾”、“遇到文档结尾”等事件。它会将这些事件传递给我们必须指定的方法：</p>
+<p>当解析器解析文档 XML 时，它会触发诸如：遇到文档开头、标签开头、标签属性、标签内容、标签结尾、文档结尾等事件。它将这些事件传递给我们指定的方法：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="o">...</span>
-<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>   <span class="c1">// indicate which functions to execute at the beginning and end of the tag</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>   <span class="c1">// 指定在标签开始和结束时执行哪些函数</span>
 <a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>  <span class="nb">xml_set_element_handler</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="s2">&quot;startElement&quot;</span><span class="p">,</span><span class="s2">&quot;endElement&quot;</span><span class="p">);</span>
-<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>   <span class="c1">// indicates which function to execute when data is encountered</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>   <span class="c1">// 指定在遇到数据时执行的函数</span>
 <a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>  <span class="nb">xml_set_character_data_handler</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="s2">&quot;afficheData&quot;</span><span class="p">);</span>
 </code></pre></div>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>由</b></div><div style="margin:0 0 0.5em 0"><b>解析器</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>处理方法</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>元素的起始位置：&lt;tag&gt;
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>由</b></div><div style="margin:0 0 0.5em 0"><b>解析器</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>处理方法</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>début d&#39;un élément :&lt;balise&gt;
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>函数 startElement($parser, $name, $attributes)</b></div><div style="margin:0 0 0.5em 0"><i>$parser</i>：文档解析器</div><div style="margin:0 0 0.5em 0"><i>$name</i>：被解析元素的名称。若遇到的是 &lt;simulations&gt; 元素，则 name 为 &quot;simulations&quot;。</div><div style="margin:0 0 0.5em 0"><i>$attributes</i>：标签属性的列表，格式为 (ATTRIBUTE,value)，其中 ATTRIBUTE <b>是标签名的大写形式</b>。</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>元素的值：
-<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>&lt;标签&gt;值&lt;/标签&gt;
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>function startElement($parser,$name,$attributes)</b></div><div style="margin:0 0 0.5em 0"><i>$parser</i>：文档的解析器</div><div style="margin:0 0 0.5em 0"><i>$name</i>：已解析元素的名称。如果遇到的是 &lt;simulations&gt; 元素，则返回 name=&quot;simulations&quot;。</div><div style="margin:0 0 0.5em 0"><i>$attributs</i>：标签属性的列表，格式为 (ATTRIBUT,值)，其中 ATTRIBUT 是标签的大写名称。</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>valeur d&#39;un élément :
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>&lt;balise&gt;valeur&lt;/balise&gt;
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>函数 displayData($parser, $data)</b></div><div style="margin:0 0 0.5em 0"><i>$parser</i>：文档解析器</div><div style="margin:0 0 0.5em 0"><i>$data</i>：标签的数据</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>元素结尾：&lt;/tag&gt; 或 &lt;tag .../&gt;
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>function afficheData($parser,$data)</b></div><div style="margin:0 0 0.5em 0"><i>$parser</i>：文档解析器</div><div style="margin:0 0 0.5em 0"><i>$data</i>：标签数据</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>fin d&#39;un élément : &lt;/balise&gt; ou &lt;balise .../&gt;
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>函数 endElement($parser, $name)</b></div><div style="margin:0 0 0.5em 0">参数与 startElement 方法的参数相同。</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>function endElement($parser,$name)</b></div><div style="margin:0 0 0.5em 0">参数与方法 <i>startElement</i> 相同。</div></td></tr></table>
 
-<p><em><code>startElement</code></em> 函数通过 <strong><code>$attributes</code></strong> 参数获取元素的属性。该参数是标签属性的字典。因此，如果我们有以下标签：</p>
+<p>函数 <em>startElement</em> 通过参数 <strong>$attributs</strong> 获取元素的属性。该参数是标签属性的字典。因此，如果我们有以下标签：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>  &lt;simulation marie=&quot;oui&quot; enfants=&quot;2&quot; salaire=&quot;200000&quot; impot=&quot;22504&quot;/&gt;
 </code></pre></div>
-<p>则 <strong>$attributes</strong> 字典将如下所示：<strong>array(marie=&gt;yes,children=&gt;2,salary=&gt;200000,tax=&gt;22504)</strong></p>
-<p>一旦定义了解析器和上述方法，即可使用 <strong>xml_parse</strong> 函数解析文档：</p>
+<p>则字典 <strong>$attributs</strong> 将如下所示：<strong>array(marie=&gt;是,children=&gt;2,salary=&gt;200000,tax=&gt;22504)</strong></p>
+<p>在定义好解析器和上述方法后，文档的解析由函数 <strong>xml_parse</strong> 完成：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="o">...</span>
-<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>   <span class="c1">// xml file processing in blocks of 4096 bytes</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>   <span class="c1">// 以 4096 字节为单位处理 XML 文件</span>
 <a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>  <span class="k">while</span><span class="p">(</span><span class="nv">$data</span><span class="o">=</span><span class="nb">fread</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span><span class="mi">4096</span><span class="p">)){</span>
-<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>    <span class="c1">// analysis of read data</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>    <span class="c1">// 对读取的数据进行分析</span>
 <a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">xml_parse</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="nv">$data</span><span class="p">,</span><span class="nb">feof</span><span class="p">(</span><span class="nv">$fp</span><span class="p">))){</span>
 <a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="o">...</span>
 <a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>    <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>  <span class="p">}</span><span class="c1">//while</span>
 </code></pre></div>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>解析一个
-<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>文档 $doc
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>analyse d&#39;un
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>document $doc
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>函数 xml_parse($parser, $doc, $end)</b></div><div style="margin:0 0 0.5em 0">解析器 <b>$parser</b> 解析文档 <b>$doc</b>。<b>$doc</b> 可以是更大文档的一个片段。参数 <b>$end</b> 表示这是最后一部分（true）还是不是（false）。 在解析 <b>$doc</b> 文档时，会在每个标签的开始和结束处调用由 <b>xml_set_element_handler</b> 定义的函数。每次检索标签内容时，都会调用由 <b>xml_set_character_data_handler</b> 定义的函数。</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>function xml_parse($parser, $doc, $fin)</b></div><div style="margin:0 0 0.5em 0">解析器 <b>$parser</b> 正在解析文档 <b>$doc</b>。<b>$doc</b> 可能是某个更大文档的一部分。 参数 <b>$fin</b> 用于指示当前片段是否为最后一个（true）或不是（false）。在解析文档 <b>$doc</b> 时，每当遇到标签的开始和结束，都会调用由 <b>xml_set_element_handler</b> 定义的函数。 而由 <b>xml_set_character_data_handler</b> 定义的函数则在每次获取到标签内容时被调用。</div></td></tr></table>
 
-<p>在解析 XML 文档的过程中可能会发生错误，特别是当 XML 文档“格式不正确”时，例如缺少结束标签。在这种情况下，<strong>xml_parse</strong> 函数将返回“false”值：</p>
+<p>在解析文档 XML 时，可能会发生错误，特别是如果文档 XML “格式不正确”，例如遗漏了结束标签。 在这种情况下，函数 <strong>xml_parse</strong> 返回的值为“false”：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="o">...</span>
 <a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">xml_parse</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="nv">$data</span><span class="p">,</span><span class="nb">feof</span><span class="p">(</span><span class="nv">$fp</span><span class="p">))){</span>
-<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>      <span class="c1">// an error has occurred</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>      <span class="c1">// 发生错误</span>
 <a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>      <span class="nb">fprintf</span><span class="p">(</span><span class="nx">STDERR</span><span class="p">,</span><span class="s2">&quot;erreur XML : %s à la ligne %d</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
 <a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>        <span class="nb">xml_error_string</span><span class="p">(</span><span class="nb">xml_get_error_code</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">)),</span>
 <a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>        <span class="nb">xml_get_current_line_number</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">));</span>
-<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>      <span class="c1">// end</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>      <span class="c1">// 结束</span>
 <a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>      <span class="k">exit</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 <a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a>    <span class="p">}</span><span class="c1">//if</span>
 </code></pre></div>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>错误处理
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>gestion d&#39;erreurs
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>function xml_get_error_code($parser)</b></div><div style="margin:0 0 0.5em 0">返回最近发生的错误代码</div><div style="margin:0 0 0.5em 0">--</div><div style="margin:0 0 0.5em 0"><b>函数 xml_error_string($code)</b></div><div style="margin:0 0 0.5em 0">返回与作为参数传递的代码相关的错误信息</div><div style="margin:0 0 0.5em 0">--</div><div style="margin:0 0 0.5em 0"><b>function xml_get_current_line($parser)</b></div><div style="margin:0 0 0.5em 0">返回当前正在解析的 XML 文档的行号</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>function xml_get_error_code($parser)</b></div><div style="margin:0 0 0.5em 0">返回最近发生的错误代码</div><div style="margin:0 0 0.5em 0">--</div><div style="margin:0 0 0.5em 0"><b>function xml_error_string($code)</b></div><div style="margin:0 0 0.5em 0">返回与传入参数中的代码相关的错误信息</div><div style="margin:0 0 0.5em 0">--</div><div style="margin:0 0 0.5em 0"><b>function xml_get_current_line($parser)</b></div><div style="margin:0 0 0.5em 0">返回解析器当前正在解析的文档 XML 的行号</div></td></tr></table>
 
-<p>文档解析完成后，分配给解析器的资源将被释放：</p>
+<p>当文档解析完成后，释放分配给解析器的资源：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="o">...</span>
-<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>   <span class="c1">// free up resources occupied by the xml parser</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>   <span class="c1">// 释放 XML 解析器占用的资源</span>
 <a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>  <span class="nb">xml_parser_free</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">);</span>
 </code></pre></div>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>释放
-<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>分配给
-<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>给 $parser 解析器的资源
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>libération des
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>ressources attribuées
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>au parseur $parser
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>函数 xml_free($parser)</b></div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>function xml_free($parser)</b></div></td></tr></table>
 
-<p>有了这一解释，前面的程序及其执行示例便不言自明。</p>
-<h2 id="54-6">5.4. <span style="color: #4f81bd">税务应用程序：第 6 版</span></h2>
-<p>现在，我们已具备所有必要元素，可以编写一个用于接收XML的税务服务客户端程序。我们将使用应用程序的第4版作为客户端，并保留第5版作为服务器端。在这个客户端-服务器应用程序中：</p>
+<p>解释完这一点后，前面的程序及其运行示例便不言自明。</p>
+<h2 id="54-6">5.4. <span style="color: #4f81bd">税务应用程序：第6版</span></h2>
+<p>现在我们已具备所有要素，可以编写一个客户端程序来调用我们的税务服务，该服务返回 XML 格式数据。我们将采用应用程序的第 4 版来构建客户端，而服务器端则继续使用第 5 版。在此客户端-服务器应用程序中：</p>
 <ul>
-  <li>税务计算模拟服务由 <b>xmlsimulations.php</b> 应用程序处理。因此，服务器的响应格式为 XML，正如我们在第 5 版中所见。
+  <li>税务计算模拟服务由应用程序 <b>xmlsimulations.php</b> 提供。因此，服务器的响应格式为 XML，正如我们在第 5 版中所见。
   </li>
-  <li>客户端不再是浏览器，而是一个独立的 PHP 客户端。其控制台界面与第 4 版相同。
+  <li>客户端不再是浏览器，而是一个独立的PHP客户端。其控制台界面与第4版相同。
   </li>
 </ul>
 
-<p>建议读者回顾 <strong>cltImpots.php</strong> 应用程序的代码，该程序是第 4 版的客户端程序。它从服务器接收了一个 <strong>$document 对象</strong>。当时这是一个 HTML 文档，现在则是一个 XML 文档。HTML 文档 <em>$document</em> 由以下函数进行解析：</p>
+<p>建议读者重新阅读 <strong>cltImpots.php</strong> 应用程序的代码，该程序是第 4 版的客户端。该客户端从服务器接收 <strong>$document</strong> 文档，而该文档当时是 HTML 文档。 现在则为 XML 文档。HTML 和 <em>$document</em> 文档由以下函数进行解析：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="o">...</span>
 <a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>  <span class="k">function</span> <span class="nf">getInfos</span><span class="p">(</span><span class="nv">$document</span><span class="p">){</span>
-<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>       <span class="c1">// $document : document HTML</span>
-<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>     <span class="c1">// we look for either the list of errors</span>
-<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>     <span class="c1">// or the simulation table</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>       <span class="c1">// $document : 文档 HTML</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>     <span class="c1">// 查询错误列表</span>
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>     <span class="c1">// 或模拟表</span>
 <a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>
-<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>     <span class="c1">// preparing the result</span>
+<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>     <span class="c1">// 结果准备</span>
 <a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>    <span class="nv">$impots</span><span class="p">[</span><span class="nx">erreurs</span><span class="p">]</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
 <a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a>    <span class="nv">$impots</span><span class="p">[</span><span class="nx">simulations</span><span class="p">]</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
 <a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a>
@@ -1530,157 +1532,157 @@
 <a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a>    <span class="k">return</span> <span class="nv">$impots</span><span class="p">;</span>
 <a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>    <span class="p">}</span><span class="c1">//getInfos</span>
 </code></pre></div>
-<p>该函数接收了 HTML 文档 $document，对其进行解析，并返回了一个包含两个属性的字典 <strong>$taxes</strong>：</p>
+<p>该函数接收文档 HTML $document，对其进行分析，并返回一个包含两个属性的字典 <strong>$impots</strong>：</p>
 <ol>
-  <li><b>errors</b>：一个错误数组
+  <li><b>错误</b>：一个错误数组
   </li>
-  <li><b>simulations</b>：一个模拟数组，每个模拟本身是一个包含四个元素（配偶、子女、工资、税额）的数组。
+  <li><b>模拟</b>：一个模拟数组，每个模拟本身是一个包含四个元素的数组（配偶、子女、工资、税款）。
   </li>
 </ol>
 
-<p><strong>cltImpots.php</strong> 应用程序现已更名为 cltXmlSimulations.php。只需修改处理从服务器接收到的文档的部分，以适应该文档现在是 XML 文档这一事实。<strong>getInfos</strong> 函数随后变为如下形式：</p>
+<p>应用程序 <strong>cltImpots.php</strong> 现更名为 cltXmlSimulations.php。仅需修改处理服务器返回文档的部分，以适应文档格式已变为 XML 的情况。 因此，函数 <strong>getInfos</strong> 变为如下形式：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="o">...</span>
 <a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="c1">// --------------------------------------------------------------</span>
 <a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>  <span class="k">function</span> <span class="nf">getInfos</span><span class="p">(</span><span class="nv">$document</span><span class="p">){</span>
-<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>       <span class="c1">// $document : document XML</span>
-<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>     <span class="c1">// we look for either the list of errors</span>
-<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>     <span class="c1">// or the simulation table</span>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>       <span class="c1">// $document：文档 XML</span>
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>     <span class="c1">// 我们正在寻找错误列表</span>
+<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>     <span class="c1">// 或模拟表</span>
 <a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a>
 <a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a>    <span class="k">global</span> <span class="nv">$impots</span><span class="p">,</span><span class="nv">$balises</span><span class="p">;</span>
 <a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a>
-<a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a>     <span class="c1">// preparing the result</span>
+<a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a>     <span class="c1">// 结果准备</span>
 <a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a>    <span class="nv">$impots</span><span class="p">[</span><span class="nx">erreurs</span><span class="p">]</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
 <a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a>    <span class="nv">$impots</span><span class="p">[</span><span class="nx">simulations</span><span class="p">]</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
-<a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a>     <span class="c1">// beacons in progress</span>
+<a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a>     <span class="c1">// 正在处理标签</span>
 <a id="__codelineno-46-15" name="__codelineno-46-15" href="#__codelineno-46-15"></a>    <span class="nv">$balises</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
 <a id="__codelineno-46-16" name="__codelineno-46-16" href="#__codelineno-46-16"></a>
-<a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a>     <span class="c1">// create an xml text analysis object</span>
+<a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a>     <span class="c1">// 创建一个 XML 文本分析对象</span>
 <a id="__codelineno-46-18" name="__codelineno-46-18" href="#__codelineno-46-18"></a>    <span class="nv">$xml_parser</span><span class="o">=</span><span class="nb">xml_parser_create</span><span class="p">();</span>
-<a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a>     <span class="c1">// indicate which functions to execute at the beginning and end of the tag</span>
+<a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a>     <span class="c1">// 指定标签开始和结束时要执行的函数</span>
 <a id="__codelineno-46-20" name="__codelineno-46-20" href="#__codelineno-46-20"></a>    <span class="nb">xml_set_element_handler</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="s2">&quot;startElement&quot;</span><span class="p">,</span><span class="s2">&quot;endElement&quot;</span><span class="p">);</span>
-<a id="__codelineno-46-21" name="__codelineno-46-21" href="#__codelineno-46-21"></a>     <span class="c1">// indicates which function to execute when data is encountered</span>
+<a id="__codelineno-46-21" name="__codelineno-46-21" href="#__codelineno-46-21"></a>     <span class="c1">// 指定在遇到数据时执行的函数</span>
 <a id="__codelineno-46-22" name="__codelineno-46-22" href="#__codelineno-46-22"></a>    <span class="nb">xml_set_character_data_handler</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="s2">&quot;getData&quot;</span><span class="p">);</span>
-<a id="__codelineno-46-23" name="__codelineno-46-23" href="#__codelineno-46-23"></a>    <span class="c1">// we analyze $document</span>
+<a id="__codelineno-46-23" name="__codelineno-46-23" href="#__codelineno-46-23"></a>    <span class="c1">// 对 $document 进行解析</span>
 <a id="__codelineno-46-24" name="__codelineno-46-24" href="#__codelineno-46-24"></a>    <span class="nb">xml_parse</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="nv">$document</span><span class="p">);</span>
-<a id="__codelineno-46-25" name="__codelineno-46-25" href="#__codelineno-46-25"></a>     <span class="c1">// free up resources occupied by the xml parser</span>
+<a id="__codelineno-46-25" name="__codelineno-46-25" href="#__codelineno-46-25"></a>     <span class="c1">// 释放 XML 解析器占用的资源</span>
 <a id="__codelineno-46-26" name="__codelineno-46-26" href="#__codelineno-46-26"></a>    <span class="nb">xml_parser_free</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">);</span>
-<a id="__codelineno-46-27" name="__codelineno-46-27" href="#__codelineno-46-27"></a>     <span class="c1">// end</span>
+<a id="__codelineno-46-27" name="__codelineno-46-27" href="#__codelineno-46-27"></a>     <span class="c1">// 结束</span>
 <a id="__codelineno-46-28" name="__codelineno-46-28" href="#__codelineno-46-28"></a>    <span class="k">return</span> <span class="nv">$impots</span><span class="p">;</span>
 <a id="__codelineno-46-29" name="__codelineno-46-29" href="#__codelineno-46-29"></a>  <span class="p">}</span><span class="c1">//getInfos</span>
 <a id="__codelineno-46-30" name="__codelineno-46-30" href="#__codelineno-46-30"></a>
 <a id="__codelineno-46-31" name="__codelineno-46-31" href="#__codelineno-46-31"></a>    <span class="c1">// -----------------------------------------------------------  </span>
-<a id="__codelineno-46-32" name="__codelineno-46-32" href="#__codelineno-46-32"></a>  <span class="c1">// function called when a start tag is encountered</span>
+<a id="__codelineno-46-32" name="__codelineno-46-32" href="#__codelineno-46-32"></a>  <span class="c1">// 遇到开始标签时调用的函数</span>
 <a id="__codelineno-46-33" name="__codelineno-46-33" href="#__codelineno-46-33"></a>  <span class="k">function</span> <span class="nf">startElement</span><span class="p">(</span><span class="nv">$parser</span><span class="p">,</span><span class="nv">$name</span><span class="p">,</span><span class="nv">$attributs</span><span class="p">){</span>
 <a id="__codelineno-46-34" name="__codelineno-46-34" href="#__codelineno-46-34"></a>    <span class="k">global</span> <span class="nv">$impots</span><span class="p">,</span><span class="nv">$balise</span><span class="p">,</span><span class="nv">$balises</span><span class="p">,</span><span class="nv">$contenu</span><span class="p">;</span>
 <a id="__codelineno-46-35" name="__codelineno-46-35" href="#__codelineno-46-35"></a>
-<a id="__codelineno-46-36" name="__codelineno-46-36" href="#__codelineno-46-36"></a>     <span class="c1">// note the tag name and content</span>
+<a id="__codelineno-46-36" name="__codelineno-46-36" href="#__codelineno-46-36"></a>     <span class="c1">// 记录标签名称及其内容</span>
 <a id="__codelineno-46-37" name="__codelineno-46-37" href="#__codelineno-46-37"></a>    <span class="nv">$balise</span><span class="o">=</span><span class="nb">strtolower</span><span class="p">(</span><span class="nv">$name</span><span class="p">);</span>
 <a id="__codelineno-46-38" name="__codelineno-46-38" href="#__codelineno-46-38"></a>    <span class="nv">$contenu</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-<a id="__codelineno-46-39" name="__codelineno-46-39" href="#__codelineno-46-39"></a>     <span class="c1">// we add it to the stack of</span>
+<a id="__codelineno-46-39" name="__codelineno-46-39" href="#__codelineno-46-39"></a>     <span class="c1">// 将其添加到标签堆栈中</span>
 <a id="__codelineno-46-40" name="__codelineno-46-40" href="#__codelineno-46-40"></a>    <span class="nb">array_push</span><span class="p">(</span><span class="nv">$balises</span><span class="p">,</span><span class="nv">$balise</span><span class="p">);</span>    
-<a id="__codelineno-46-41" name="__codelineno-46-41" href="#__codelineno-46-41"></a>    <span class="c1">// is it a simulation?</span>
+<a id="__codelineno-46-41" name="__codelineno-46-41" href="#__codelineno-46-41"></a>    <span class="c1">// 这是模拟吗？</span>
 <a id="__codelineno-46-42" name="__codelineno-46-42" href="#__codelineno-46-42"></a>    <span class="k">if</span><span class="p">(</span><span class="nv">$balise</span><span class="o">==</span><span class="s2">&quot;simulation&quot;</span><span class="p">){</span>   
-<a id="__codelineno-46-43" name="__codelineno-46-43" href="#__codelineno-46-43"></a>         <span class="c1">// simulation attributes are noted</span>
+<a id="__codelineno-46-43" name="__codelineno-46-43" href="#__codelineno-46-43"></a>         <span class="c1">// 记录模拟的属性</span>
 <a id="__codelineno-46-44" name="__codelineno-46-44" href="#__codelineno-46-44"></a>      <span class="nv">$impots</span><span class="p">[</span><span class="nx">simulations</span><span class="p">][]</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="nv">$attributs</span><span class="p">[</span><span class="nx">MARIE</span><span class="p">],</span><span class="nv">$attributs</span><span class="p">[</span><span class="nx">ENFANTS</span><span class="p">],</span><span class="nv">$attributs</span><span class="p">[</span><span class="nx">SALAIRE</span><span class="p">],</span><span class="nv">$attributs</span><span class="p">[</span><span class="nx">IMPOT</span><span class="p">]);</span>
 <a id="__codelineno-46-45" name="__codelineno-46-45" href="#__codelineno-46-45"></a>    <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-46-46" name="__codelineno-46-46" href="#__codelineno-46-46"></a>  <span class="p">}</span><span class="c1">//startElement</span>
 <a id="__codelineno-46-47" name="__codelineno-46-47" href="#__codelineno-46-47"></a>
 <a id="__codelineno-46-48" name="__codelineno-46-48" href="#__codelineno-46-48"></a>    <span class="c1">// -----------------------------------------------------------  </span>
-<a id="__codelineno-46-49" name="__codelineno-46-49" href="#__codelineno-46-49"></a>   <span class="c1">// the function called when an end tag is encountered</span>
+<a id="__codelineno-46-49" name="__codelineno-46-49" href="#__codelineno-46-49"></a>   <span class="c1">// 遇到结束标记时调用的函数</span>
 <a id="__codelineno-46-50" name="__codelineno-46-50" href="#__codelineno-46-50"></a>  <span class="k">function</span> <span class="nf">endElement</span><span class="p">(</span><span class="nv">$parser</span><span class="p">,</span><span class="nv">$name</span><span class="p">){</span>
-<a id="__codelineno-46-51" name="__codelineno-46-51" href="#__codelineno-46-51"></a>       <span class="c1">// retrieve the current tag</span>
+<a id="__codelineno-46-51" name="__codelineno-46-51" href="#__codelineno-46-51"></a>       <span class="c1">// 获取当前标签</span>
 <a id="__codelineno-46-52" name="__codelineno-46-52" href="#__codelineno-46-52"></a>    <span class="k">global</span> <span class="nv">$impots</span><span class="p">,</span><span class="nv">$balises</span><span class="p">,</span><span class="nv">$contenu</span><span class="p">;</span>
 <a id="__codelineno-46-53" name="__codelineno-46-53" href="#__codelineno-46-53"></a>    <span class="nv">$balise</span><span class="o">=</span><span class="nb">array_pop</span><span class="p">(</span><span class="nv">$balises</span><span class="p">);</span>
-<a id="__codelineno-46-54" name="__codelineno-46-54" href="#__codelineno-46-54"></a>    <span class="c1">// is this an error tag?</span>
+<a id="__codelineno-46-54" name="__codelineno-46-54" href="#__codelineno-46-54"></a>    <span class="c1">// 这是错误标签吗？</span>
 <a id="__codelineno-46-55" name="__codelineno-46-55" href="#__codelineno-46-55"></a>    <span class="k">if</span><span class="p">(</span><span class="nv">$balise</span><span class="o">==</span><span class="s2">&quot;erreur&quot;</span><span class="p">){</span>
-<a id="__codelineno-46-56" name="__codelineno-46-56" href="#__codelineno-46-56"></a>         <span class="c1">// one more mistake</span>
+<a id="__codelineno-46-56" name="__codelineno-46-56" href="#__codelineno-46-56"></a>         <span class="c1">// 又一个错误</span>
 <a id="__codelineno-46-57" name="__codelineno-46-57" href="#__codelineno-46-57"></a>      <span class="nv">$impots</span><span class="p">[</span><span class="nx">erreurs</span><span class="p">][]</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="nv">$contenu</span><span class="p">);</span>
 <a id="__codelineno-46-58" name="__codelineno-46-58" href="#__codelineno-46-58"></a>    <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-46-59" name="__codelineno-46-59" href="#__codelineno-46-59"></a>  <span class="p">}</span><span class="c1">//endElement</span>
 <a id="__codelineno-46-60" name="__codelineno-46-60" href="#__codelineno-46-60"></a>
 <a id="__codelineno-46-61" name="__codelineno-46-61" href="#__codelineno-46-61"></a>    <span class="c1">// -----------------------------------------------------------  </span>
-<a id="__codelineno-46-62" name="__codelineno-46-62" href="#__codelineno-46-62"></a>   <span class="c1">// the tag content processing function</span>
+<a id="__codelineno-46-62" name="__codelineno-46-62" href="#__codelineno-46-62"></a>   <span class="c1">// 标签内容的处理函数</span>
 <a id="__codelineno-46-63" name="__codelineno-46-63" href="#__codelineno-46-63"></a>  <span class="k">function</span> <span class="nf">getData</span><span class="p">(</span><span class="nv">$parser</span><span class="p">,</span><span class="nv">$data</span><span class="p">){</span>
-<a id="__codelineno-46-64" name="__codelineno-46-64" href="#__codelineno-46-64"></a>      <span class="c1">// global data</span>
+<a id="__codelineno-46-64" name="__codelineno-46-64" href="#__codelineno-46-64"></a>      <span class="c1">// 全局数据</span>
 <a id="__codelineno-46-65" name="__codelineno-46-65" href="#__codelineno-46-65"></a>    <span class="k">global</span> <span class="nv">$balise</span><span class="p">,</span><span class="nv">$contenu</span><span class="p">;</span>
-<a id="__codelineno-46-66" name="__codelineno-46-66" href="#__codelineno-46-66"></a>     <span class="c1">// is this an error tag?</span>
+<a id="__codelineno-46-66" name="__codelineno-46-66" href="#__codelineno-46-66"></a>     <span class="c1">// 这是错误标签吗？</span>
 <a id="__codelineno-46-67" name="__codelineno-46-67" href="#__codelineno-46-67"></a>    <span class="k">if</span><span class="p">(</span><span class="nv">$balise</span><span class="o">==</span><span class="s2">&quot;erreur&quot;</span><span class="p">){</span>
-<a id="__codelineno-46-68" name="__codelineno-46-68" href="#__codelineno-46-68"></a>         <span class="c1">// is added to the content of the current tag</span>
+<a id="__codelineno-46-68" name="__codelineno-46-68" href="#__codelineno-46-68"></a>         <span class="c1">// 累加到当前标签的内容中</span>
 <a id="__codelineno-46-69" name="__codelineno-46-69" href="#__codelineno-46-69"></a>      <span class="nv">$contenu</span><span class="o">.=</span><span class="nv">$data</span><span class="p">;</span>
 <a id="__codelineno-46-70" name="__codelineno-46-70" href="#__codelineno-46-70"></a>    <span class="p">}</span><span class="c1">//if</span>
 <a id="__codelineno-46-71" name="__codelineno-46-71" href="#__codelineno-46-71"></a>  <span class="p">}</span><span class="c1">//getData</span>
 </code></pre></div>
 <p>注释：</p>
 <ul>
-  <li><b>getInfos($document)</b> 函数首先创建一个解析器，然后对其进行配置，最后开始分析 <b>$document</b>：
+  <li>函数 <b>getInfos($document)</b> 首先创建一个解析器，然后对其进行配置，最后开始分析文档 <b>$document</b>：
   </li>
 </ul>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="o">...</span>
-<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>     <span class="c1">// create an xml text analysis object</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>     <span class="c1">// 创建一个 XML 文本解析对象</span>
 <a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>    <span class="nv">$xml_parser</span><span class="o">=</span><span class="nb">xml_parser_create</span><span class="p">();</span>
-<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>     <span class="c1">// indicate which functions to execute at the beginning and end of the tag</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>     <span class="c1">// 指定在标签开始和结束时执行哪些函数</span>
 <a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>    <span class="nb">xml_set_element_handler</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="s2">&quot;startElement&quot;</span><span class="p">,</span><span class="s2">&quot;endElement&quot;</span><span class="p">);</span>
-<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>     <span class="c1">// indicates which function to execute when data is encountered</span>
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>     <span class="c1">// 指定在遇到数据时执行的函数</span>
 <a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>    <span class="nb">xml_set_character_data_handler</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="s2">&quot;getData&quot;</span><span class="p">);</span>
-<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>    <span class="c1">// we analyze $document</span>
+<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>    <span class="c1">// 对 $document 进行解析</span>
 <a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>    <span class="nb">xml_parse</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">,</span><span class="nv">$document</span><span class="p">);</span>
 </code></pre></div>
 <ul>
-  <li>解析完成后，释放分配给解析器的资源，并返回 <b>$imports</b> 字典。
+  <li>分析完成后，释放分配给解析器的资源，并返回字典 <b>$impots</b>。
   </li>
 </ul>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="cp">&lt;?php</span>
 <a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="o">...</span>
-<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>     <span class="c1">// free up resources occupied by the xml parser</span>
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>     <span class="c1">// 释放 XML 解析器占用的资源</span>
 <a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>    <span class="nb">xml_parser_free</span><span class="p">(</span><span class="nv">$xml_parser</span><span class="p">);</span>
-<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>     <span class="c1">// end</span>
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>     <span class="c1">// 结束</span>
 <a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>    <span class="k">return</span> <span class="nv">$impots</span><span class="p">;</span>
 </code></pre></div>
 <ul>
-  <li><b>startElement($parser, $name, $attributes)</b> 函数在每个标签开始时被调用。它 
+  <li>函数 <b>startElement($parser,$name,$attributs) </b>在每个标签开始时被调用。它 
     <ul>
-      <li>将 <i>$name</i> 标签添加到标签数组 <i>$tags</i> 中。该数组以栈的形式管理：当遇到标签结束符号时，将从<i> $tags </i>中弹出最后压入的标签。当前标签也会存储在 <i>$tag 中</i>。<i>$attributes</i> 字典包含所遇标签的属性，且这些属性均为<b>大写</b>。
+      <li>在标签数组 <i>$balises</i> 中发现标签 <i>$name</i>。该数组以栈的形式管理：当遇到标签结束符号时，<i>$balises</i> 中栈顶的最后一个标签将被弹出。 当前标签也会记录在 <i>$balise</i> 中。在字典 <i>$attributs</i> 中，可以找到所遇标签的属性，这些属性以<b>大写形式</b>存储。
       </li>
-      <li>若为模拟标签，则将属性存储于全局字典 <b>$impots[simulations] </b>中。
+      <li>若为模拟标签，则将属性记录在全局字典 <b>$impots[simulations] </b>中。
       </li>
     </ul>
   </li>
 </ul>
 
 <ul>
-  <li>当标签的 <b>$data</b> 内容被检索后，会调用 <b>getData($parser,$data)</b> 函数。此处采取了一项预防措施。在某些 XML 文档处理 API 中（尤其是 Java），已注意到该函数可能被反复调用，即标签的 <b>$data</b> 内容未必能一次性全部获取。 此处，PHP 文档并未提及此限制。作为预防措施，我们将获取的 $data 值存储在全局变量 <b>$content 中</b>。只有在遇到标签结束符号时，我们才会认为已获取该标签的全部内容。受此处理影响的唯一标签是 <i>&lt;error&gt;</i> 标签。
+  <li>当标签的内容 <b>$data</b> 被检索后，调用函数 <b>getData($parser,$data)</b>。 这里我们采取了一项预防措施。在某些处理 XML 文档的 API 中（特别是 Java），指出该函数可以被反复调用，c.a.d。 这意味着我们未必能一次性获取标签的<b>全部</b>内容。 此处的文档 PHP 并未说明这一限制。为谨慎起见，我们将获取到的值 $data 累加到全局变量 <b>$contenu</b> 中。 只有在遇到标签结束符号时，才认为已获取该标签的全部内容。受此处理影响的唯一标签是 <i>&lt;erreur&gt;</i>。
   </li>
 </ul>
 
 <ul>
-  <li><b>endElement($parser, $name)</b> 函数在每个标签结束时被调用。此处使用该函数通过从标签栈中移除最后一个标签来更改当前标签的名称，并将闭合 <i>&lt;error&gt;</i> 标签的内容添加到 <b>$imports[errors]</b> 数组中。
+  <li>在每个标签结束时都会调用函数 <b>endElement($parser,$name)</b>。 此处调用该函数是为了通过移除标签堆栈中的最后一个标签来更改当前标签的名称，并添加以 <i>&lt;erreur&gt;</i> 结尾的标签内容至 <b>$impots[erreurs]</b> 数组中。
   </li>
 </ul>
 
-<p>以下是几个执行示例，首先是在数据库管理系统尚未启动的情况下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>dos&gt;e:\php43\php.exe cltXmlSimulations.php http://localhost/poly/impots/8/xmlsimulations.php oui 2 200000
+<p>以下是几个执行示例，首先是一个未被调用的 SGBD：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>dos&gt;e:\php43\php.exe cltXmlSimulations.php http://localhost/poly/impots/8/xmlsimulations.php 是 2 200000
 <a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>Jeton de session=[e8c29ea12f79e4771960068d161229fd]
 <a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>Les erreurs suivantes se sont produites :
 <a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>Impossible d&#39;ouvrir la base DSN [mysql-dbimpots] (S1000)
 </code></pre></div>
-<p>随后，在数据库管理系统运行时：</p>
+<p>随后是已运行的 SGBD：</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">dos&gt;e:\php43\php.exe <span style="background-color:#ffe994">cltXmlSimulations.php http://localhost/poly/impots/8/xmlsimulations.php oui 3 200000</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dos&gt;e:\php43\php.exe cltXmlSimulations.php http://localhost/poly/impots/8/xmlsimulations.php 是 3 200000</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Jeton de session=[<span style="background-color:#ffe994">69a54d79db10b70ed0a2d55d5026ac8b</span>]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Simulations :</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">[oui,3,200000,16400]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">dos &gt;<span style="background-color:#ffe994">e:\php43\php.exe cltXmlSimulations.php http://localhost/poly/impots/8/xmlsimulations.php oui 2 200000 69a54d79db10b70ed0a2d55d5026ac8b</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dos &gt;e:\php43\php.exe cltXmlSimulations.php http://localhost/poly/impots/8/xmlsimulations.php 是 2 200000 69a54d79db10b70ed0a2d55d5026ac8b</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Jeton de session=[69a54d79db10b70ed0a2d55d5026ac8b]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Simulations :</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">[oui,3,200000,16400]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">[oui,2,200000,22504]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">dos &gt;<span style="background-color:#ffe994">e:\php43\php.exe cltXmlSimulations.php http://localhost/poly/impots/8/xmlsimulations.php non 2 200000 69a54d79db10b70ed0a2d55d5026ac8b</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dos &gt;e:\php43\php.exe cltXmlSimulations.php http://localhost/poly/impots/8/xmlsimulations.php 否 2 200000 69a54d79db10b70ed0a2d55d5026ac8b</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Jeton de session=[69a54d79db10b70ed0a2d55d5026ac8b]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Simulations :</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">[oui,3,200000,16400]</span></span>
@@ -1689,13 +1691,13 @@
 </code></pre></div>
 
 <h2 id="55">5.5. <span style="color: #4f81bd">结论</span></h2>
-<p>得益于其 XML 响应，该<strong>税务</strong>应用程序对于其开发人员以及客户端应用程序的开发人员而言，都变得更易于管理。</p>
+<p>得益于其响应机制<strong>，税费</strong>应用程序对于其设计者以及客户端应用程序的设计者而言，都变得更易于管理。</p>
 <ul>
-  <li>现在，服务器应用程序的设计可以委托给两类人：Servlet 的 PHP 开发人员，以及负责管理浏览器响应外观的图形设计师。后者只需了解服务器 XML 响应的结构，即可构建与其配套的样式表。请注意，这些样式表包含在独立于 PHP 应用程序的单独 XSL 文件中。因此，前端设计师可以独立于开发人员进行工作。
+  <li>现在，服务器应用程序的设计可以委托给两类人员：Servlet 开发人员和负责管理浏览器中响应外观的图形设计师。 后者只需了解服务器响应的结构，即可构建相应的样式表。 需要指出的是，这些样式表存储在独立的XSL文件中，与PHP应用程序相互独立。因此，图形设计师可以独立于开发人员开展工作。
   </li>
-  <li>客户端应用程序设计师同样只需了解服务器 XML 响应的结构。前端设计师对样式表所做的任何更改都不会影响该 XML 响应，后者始终保持不变。这是一大优势。
+  <li>客户端应用程序的设计人员也只需了解服务器响应的结构即可。图形设计师对样式表所做的任何修改都不会影响该响应，该响应始终保持不变。这是一个巨大的优势。
   </li>
-  <li>开发者如何在不破坏现有功能的前提下更新 PHP 应用程序？首先，只要 XML 响应保持不变，他们就可以随心所欲地组织应用程序。此外，只要保留客户端预期的 <b>&lt;error&gt; </b>和 <b>&lt;simulation&gt;</b> 元素，他们也可以更新 XML 响应。因此，他们可以在响应中添加新标签。前端开发人员会在样式表中处理这些标签，浏览器也将能够显示响应的更新版本。 然而，程序化客户端将沿用旧模型继续运行，新标签会被直接忽略。要实现这一点，必须在服务器响应的 XML 解析中明确标识出需要处理的标签。这正是我们在税务应用的 XML 客户端中所做的：相关流程明确规定仅处理 <i>&lt;error&gt; </i>和 <i>&lt;simulation&gt;</i> 标签，因此其他标签会被忽略。
+  <li>开发人员如何在不破坏现有架构的情况下升级其PHP应用程序？ 首先，只要响应 XML 保持不变，开发者便可按需组织应用程序。此外，只要保留客户端所需的 <b>&lt;error&gt; </b>和 <b>&lt;simulation&gt;</b> 元素，开发者也可对响应 XML 进行升级。这样，开发者便可在该响应中添加新标签。 前端设计师会在样式表中考虑这些新标签，浏览器也能获取响应的新版本。而已编程的客户端将继续使用旧模板，新标签会被直接忽略。要实现这一点，必须在对服务器响应的XML解析中，准确识别出所查找的标签。 这正是我们在<b>税务</b>应用程序的XML客户端中所做的：在相关流程中，我们明确指定处理&lt;erreur&gt;和<i>&lt;simulation&gt;</i>标签。因此，其他标签会被忽略。
   </li>
 </ul>
 
